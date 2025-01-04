@@ -33,7 +33,7 @@ export type BCP47LanguageTag = {
     tag: string 
     name: string
     nativeName: string
-    primary?: boolean
+    default?: boolean
 }
 
 export type BCP47LanguageTags = Record<BCP47LanguageTagName,BCP47LanguageTag>

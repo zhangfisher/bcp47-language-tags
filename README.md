@@ -105,7 +105,7 @@ export type BCP47LanguageTag = {
     tag: string 
     name: string
     nativeName: string
-    primary?: boolean
+    default?: boolean
 }
 
 export type BCP47LanguageTags = Record<BCP47LanguageTagName,BCP47LanguageTag>
@@ -118,14 +118,18 @@ export type BCP47LanguageTags = Record<BCP47LanguageTagName,BCP47LanguageTag>
 // import { getTag,getTags } from 'bcp-language-tags/zh'; 
 import { getTag } from 'bcp-language-tags/en';   
 
-
-getTag('zh-CN') // {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "default": true}
-getTag('zh-TW') // {"tag": "zh-TW", "name": "Chinese (Traditional - Taiwan)", "nativeName": "繁體中文 (臺灣)"}
-getTag('en-US') // {"tag": "en-US", "name": "English (United States)", "nativeName": "English (United States)", "default": true}
+// {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "default": true}
+getTag('zh-CN') 
+// {"tag": "zh-TW", "name": "Chinese (Traditional - Taiwan)", "nativeName": "繁體中文 (臺灣)"}
+getTag('zh-TW') 
+// {"tag": "en-US", "name": "English (United States)", "nativeName": "English (United States)", "default": true}
+getTag('en-US') 
 
 // return default language tag
-getTag('zh') // {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "default": true}
-getTag('en') // {"tag": "en-US", "name": "English (United States)", "nativeName": "English (United States)", "default": true}
+// {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "default": true}
+getTag('zh') 
+// {"tag": "en-US", "name": "English (United States)", "nativeName": "English (United States)", "default": true}
+getTag('en') 
 
 // return all language tags
 getTags("zh")
