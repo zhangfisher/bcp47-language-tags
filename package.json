@@ -30,6 +30,41 @@
 			"types": "./dist/zh.d.ts",
 			"require": "./dist/zh.js",
 			"import": "./dist/zh.mjs"
+		},
+		"./de":{
+			"types": "./dist/de.d.ts",
+			"require": "./dist/de.js",
+			"import": "./dist/de.mjs"
+		},
+		"./fr":{
+			"types": "./dist/fr.d.ts",
+			"require": "./dist/fr.js",
+			"import": "./dist/fr.mjs"
+		},
+		"./it":{
+			"types": "./dist/it.d.ts",
+			"require": "./dist/it.js",
+			"import": "./dist/it.mjs"
+		},
+		"./jp":{
+			"types": "./dist/jp.d.ts",
+			"require": "./dist/jp.js",
+			"import": "./dist/jp.mjs"
+		},
+		"./ko":{
+			"types": "./dist/ko.d.ts",
+			"require": "./dist/ko.js",
+			"import": "./dist/ko.mjs"
+		},
+		"./ru":{
+			"types":"./dist/ru.d.ts",
+			"require": "./dist/ru.js",
+			"import": "./dist/ru.mjs"
+		},
+		"./es":{
+			"types": "./dist/es.d.ts",
+			"require": "./dist/es.js",
+			"import": "./dist/es.mjs"
 		}
 	},
 	"scripts": {

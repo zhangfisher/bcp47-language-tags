@@ -1,12 +1,12 @@
 import { createTagUtils } from './utils'
 
 export const tags = {
-        "zh-CN": {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文 (Simplified Chinese)", "default": true},
-        "zh-TW": {"tag": "zh-TW", "name": "Chinese (Traditional - Taiwan)", "nativeName": "繁體中文 (Traditional Chinese - Taiwan)"},
-        "zh-HK": {"tag": "zh-HK", "name": "Chinese (Traditional - Hong Kong)", "nativeName": "繁體中文 (Traditional Chinese - Hong Kong)"},
+        "zh-CN": {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "default": true},
+        "zh-TW": {"tag": "zh-TW", "name": "Chinese (Traditional - Taiwan)", "nativeName": "繁體中文 (臺灣)"},
+        "zh-HK": {"tag": "zh-HK", "name": "Chinese (Traditional - Hong Kong)", "nativeName": "繁體中文（香港）"},
         "zh-MO": {"tag": "zh-MO", "name": "Chinese (Traditional - Macau)", "nativeName": "繁體中文 (Traditional Chinese - Macau)"},
         "zh-SG": {"tag": "zh-SG", "name": "Chinese (Simplified - Singapore)", "nativeName": "简体中文 (Simplified Chinese - Singapore)"},      
-        "zh-CHS": {"tag": "zh-CHS", "name": "Chinese (Simplified)", "nativeName": "简体中文 (Simplified Chinese)"},
+        "zh-CHS": {"tag": "zh-CHS", "name": "Chinese (Simplified)", "nativeName": "简体中文"},
         "zh-CHT": {"tag": "zh-CHT", "name": "Chinese (Traditional)", "nativeName": "繁體中文 (Traditional Chinese)"},
         "en-US": {"tag": "en-US", "name": "English (United States)", "nativeName": "English (United States)", "default": true},
         "en-GB": {"tag": "en-GB", "name": "English (United Kingdom)", "nativeName": "English (United Kingdom)"},

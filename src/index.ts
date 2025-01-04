@@ -1,3 +1,11 @@
 export * as en  from './en'
 export * as zh  from './zh'
+export * as jp  from './jp'
+export * as ko  from './ko'
+export * as ru  from './ru'
+export * as es  from './es'
+export * as fr  from './fr'
+export * as de  from './de'
+export * as it  from './it'
+
 export * from './types'
