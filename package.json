@@ -1,7 +1,7 @@
 {
 	"name": "bcp47-language-tags",
 	"version": "1.0.1",
-	"main": "dist/index.js",
+  	"main": "dist/index.js",
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
 	"description": "list BCP 47 language tags and types",
@@ -15,6 +15,13 @@
 		"LICENSE",
 		"README.md"
 	],
+	"keywords": [
+		"bcp47",
+		"internationalization",
+		"i18n",
+		"language",
+		"locale"
+  	],
 	"exports": {
 		".": {			
 			"types": "./dist/zh.d.ts",
