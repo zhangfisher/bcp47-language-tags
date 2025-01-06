@@ -1,4 +1,4 @@
-# bcp-language-Tags
+# bcp47-language-tags
 
 list of language tags and typescript type for the `BCP-47` standard.
 
