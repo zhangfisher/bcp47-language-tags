@@ -2,4 +2,6 @@
 "bcp47-language-tags": patch
 ---
 
-fix en types error
+[Fix] fix en types error
+[Feat] add getDefaultTags function
+

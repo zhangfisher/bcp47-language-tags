@@ -128,10 +128,8 @@ export const tags = {
         "ka-GE": {"tag": "ka-GE", "name": "Georgisch (Georgien)", "nativeName": "ქართული (საქართველო)"},      
 }
 
-
-
-const { getTag, getTags } = createTagUtils(tags)
+const { getTag, getTags, getDefaultTags } = createTagUtils(tags)
 export {
-    getTag, getTags
+    getTag, getTags,getDefaultTags
 }
 export * from './types'    

@@ -29,7 +29,7 @@
 			"import": "./dist/index.mjs"
 		},
 		"./en": {
-			"types": "./dist/zh.d.ts",
+			"types": "./dist/en.d.ts",
 			"require": "./dist/en.js",
 			"import": "./dist/en.mjs"
 		},

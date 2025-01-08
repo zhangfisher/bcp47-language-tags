@@ -129,8 +129,8 @@ export const tags = {
 }
 
 
-const { getTag, getTags } = createTagUtils(tags)
+const { getTag, getTags, getDefaultTags } = createTagUtils(tags)
 export {
-    getTag, getTags
+    getTag, getTags,getDefaultTags
 }
 export * from './types'    

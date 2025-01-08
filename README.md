@@ -144,5 +144,8 @@ getTags("zh")
 //      {"tag": "zh-CHT", "name": "Chinese (Traditional)", "nativeName": "繁體中文 (Traditional Chinese)"}
 //   ]
 
+// return default language tags
+getDefaultTags()
+
 
 ```

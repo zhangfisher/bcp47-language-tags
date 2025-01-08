@@ -19,7 +19,7 @@ export function createTagUtils(tags:BCP47LanguageTags){
             Object.entries(tags).filter(([name,tag])=>{
                 if(name.startsWith(language+"-")){
                     matchedTags.push(tag)
-                    if(tag.primary) primaryTag = tag
+                    if(tag.default) primaryTag = tag
                 }                
             })
             return primaryTag ? primaryTag : matchedTags.length>0 ? matchedTags[0] : undefined
@@ -33,6 +33,9 @@ export function createTagUtils(tags:BCP47LanguageTags){
                 }
             })
             return matchedTags
+        },
+        getDefaultTags():BCP47LanguageTag[] {
+            return Object.values(tags).filter(tag=>tag.default)
         }
     }
 }
