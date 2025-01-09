@@ -52,6 +52,7 @@ for(let tag of tags) {
 //    ...
 
 // Supoort language :
+import { tags } from 'bcp-language-tags/zh'
 import { tags } from 'bcp-language-tags/de'
 import { tags } from 'bcp-language-tags/en';
 import { tags } from 'bcp-language-tags/es';
@@ -60,6 +61,30 @@ import { tags } from 'bcp-language-tags/it';
 import { tags } from 'bcp-language-tags/jp';
 import { tags } from 'bcp-language-tags/ko';
 import { tags } from 'bcp-language-tags/ru';
+import { tags } from 'bcp-language-tags/ar';
+import { tags } from 'bcp-language-tags/pt';
+import { tags } from 'bcp-language-tags/nl';
+
+
+// 
+import allTags  from 'bcp-language-tags';
+// {
+//    "zh-CN": {
+//          "zh-CN": {"tag": "zh-CN", "name": "简体中文", "nativeName": "简体中文", "primary": true},
+//          "zh-TW": {"tag": "zh-TW", "name": "繁体中文（台湾）", "nativeName": "繁體中文 (臺灣)"}, 
+//          "zh-CHS": {"tag": "zh-CHS", "name": "简体中文", "nativeName": "简体中文"},
+//          "zh-CHT": {"tag": "zh-CHT", "name": "繁体中文", "nativeName": "繁體中文 (Traditional Chinese)"},
+//          "en-US": {"tag": "en-US", "name": "英语（美国）", "nativeName": "English (United States)", "primary": true},
+//          ....
+//     },
+//     "en-US": {
+//          "zh-CN": {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "primary": true},
+//          "zh-TW": {"tag": "zh-TW", "name": "Chinese (Traditional - Taiwan)", "nativeName": "繁體中文 (臺灣)"},
+//          "zh-HK": {"tag": "zh-HK", "name": "Chinese (Traditional - Hong Kong)", "nativeName": "繁體中文（香港）"},
+//          "zh-MO": {"tag": "zh-MO", "name": "Chinese (Traditional - Macau)", "nativeName": "繁體中文 (Traditional Chinese - Macau)
+//          .....
+//      }
+// }
 
 ```
 
@@ -151,13 +176,15 @@ getPrimaryTags()
     {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "primary": true},
     {"tag": "en-US", "name": "English (United States)", "nativeName": "English (United States)", "primary": true}
     {"tag": "es-ES", "name": "Spanish (Spain)", "nativeName": "Español (España)", "primary": true },
-    {"tag": "ar-EG", "name": "Arabic (Egypt)", "nativeName": "العربية (مصر)", "primary": true },
     {"tag": "de-DE", "name": "German (Germany)", "nativeName": "Deutsch (Deutschland)", "primary": true },
     {"tag": "fr-FR", "name": "French (France)", "nativeName": "Français (France)", "primary": true },
     {"tag": "it-IT", "name": "Italian (Italy)", "nativeName": "Italiano (Italia)", "primary": true },
     {"tag": "ja-JP", "name": "Japanese (Japan)", "nativeName": "日本語 (日本)", "primary": true },
     {"tag": "ko-KR", "name": "Korean (South Korea)", "nativeName": "한국어 (대한민국)", "primary": true },
-    {"tag": "ru-RU", "name": "Russian (Russia)", "nativeName": "Русский (Россия)", "primary": true }
+    {"tag": "ru-RU", "name": "Russian (Russia)", "nativeName": "Русский (Россия)", "primary": true },
+    {"tag": "nl-NL", "name": "Dutch (Netherlands)", "nativeName": "Nederlands (Nederland)", "primary": true },
+    {"tag": "pt-PT", "name": "Portuguese (Portugal)", "nativeName": "Português (Portugal)", "primary": true },
+    {"tag": "ar-EG", "name": "Arabic (Egypt)", "nativeName": "العربية (مصر)", "primary": true }
 ]
 
 

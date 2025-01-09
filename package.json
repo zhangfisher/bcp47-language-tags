@@ -72,6 +72,21 @@
 			"types": "./dist/es.d.ts",
 			"require": "./dist/es.js",
 			"import": "./dist/es.mjs"
+		},
+		"./ar": {
+			"types": "./dist/ar.d.ts",
+			"require": "./dist/ar.js",
+			"import": "./dist/ar.mjs"
+		},
+		"./pt": {
+			"types": "./dist/pt.d.ts",
+			"require": "./dist/pt.js",
+			"import": "./dist/pt.mjs"
+		},
+		"./nl": {
+			"types": "./dist/nl.d.ts",
+			"require": "./dist/nl.js",
+			"import": "./dist/nl.mjs"
 		}
 	},
 	"scripts": {

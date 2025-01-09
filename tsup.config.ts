@@ -1,5 +1,4 @@
-import { defineConfig, Options } from 'tsup'
-
+import { defineConfig, Options } from 'tsup' 
 
 const languages = [
     'en',
@@ -10,7 +9,10 @@ const languages = [
     'jp',
     'ru',
     'it',
-    'ko'
+    'ko',
+    'ar',
+    'pt',
+    'nl'
 ]
 export default defineConfig([
     {
@@ -19,8 +21,8 @@ export default defineConfig([
         ],
         outDir: 'dist',
         minify: true,
-        dts: true,        
-        clean: true,  
+        dts   : true,        
+        clean : true,  
         format: ['cjs', 'esm']
     },
     ...languages.map(lng=>{
@@ -28,12 +30,12 @@ export default defineConfig([
             entry: [
                 `src/${lng}.ts`
             ],
-            outDir: 'dist',
-            minify: false,
-            dts: true,        
-            clean: true, 
+            outDir    : 'dist',
+            minify    : false,
+            dts       : true,        
+            clean     : true, 
             cjsInterop: true,
-            format: ['cjs', 'esm']
+            format    : ['cjs', 'esm']
         } as Options
     }) 
 ] )
