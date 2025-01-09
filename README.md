@@ -13,16 +13,16 @@ for(let tag of tags) {
     console.log(tag);
 }
 // output：
-//    {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "default": true},
+//    {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "primary": true},
 //    {"tag": "zh-TW", "name": "Chinese (Traditional - Taiwan)", "nativeName": "繁體中文 (臺灣)"},
 //    {"tag": "zh-HK", "name": "Chinese (Traditional - Hong Kong)", "nativeName": "繁體中文（香港）"},
 //    {"tag": "zh-MO", "name": "Chinese (Traditional - Macau)", "nativeName": "繁體中文 (Traditional Chinese - Macau)"},
 //    {"tag": "zh-SG", "name": "Chinese (Simplified - Singapore)", "nativeName": "简体中文 (Simplified Chinese - Singapore)"},      
 //    {"tag": "zh-CHS", "name": "Chinese (Simplified)", "nativeName": "简体中文"},
 //    {"tag": "zh-CHT", "name": "Chinese (Traditional)", "nativeName": "繁體中文 (Traditional Chinese)"},
-//    {"tag": "en-US", "name": "English (United States)", "nativeName": "English (United States)", "default": true},
+//    {"tag": "en-US", "name": "English (United States)", "nativeName": "English (United States)", "primary": true},
 //    {"tag": "es-CR", "name": "Spanish (Costa Rica)", "nativeName": "Español (Costa Rica)"},
-//    {"tag": "ar-EG", "name": "Arabic (Egypt)", "nativeName": "العربية (مصر)", "default": true},
+//    {"tag": "ar-EG", "name": "Arabic (Egypt)", "nativeName": "العربية (مصر)", "primary": true},
 //    {"tag": "ar-SA", "name": "Arabic (Saudi Arabia)", "nativeName": "العربية (السعودية)"},
 //    {"tag": "ar-DZ", "name": "Arabic (Algeria)", "nativeName": "العربية (الجزائر)"},
 //    {"tag": "ar-MA", "name": "Arabic (Morocco)", "nativeName": "العربية (المغرب)"},
@@ -35,11 +35,11 @@ for(let tag of tags) {
     console.log(tag);
 }
 // output：
-//    "zh-CN": {"tag": "zh-CN", "name": "简体中文", "nativeName": "简体中文", "default": true},
+//    "zh-CN": {"tag": "zh-CN", "name": "简体中文", "nativeName": "简体中文", "primary": true},
 //    "zh-TW": {"tag": "zh-TW", "name": "繁体中文（台湾）", "nativeName": "繁體中文 (臺灣)"}, 
 //    "zh-CHS": {"tag": "zh-CHS", "name": "简体中文", "nativeName": "简体中文"},
 //    "zh-CHT": {"tag": "zh-CHT", "name": "繁体中文", "nativeName": "繁體中文 (Traditional Chinese)"},
-//    "en-US": {"tag": "en-US", "name": "英语（美国）", "nativeName": "English (United States)", "default": true},
+//    "en-US": {"tag": "en-US", "name": "英语（美国）", "nativeName": "English (United States)", "primary": true},
 //    "en-GB": {"tag": "en-GB", "name": "英语（英国）", "nativeName": "English (United Kingdom)"},
 //    "en-IN": {"tag": "en-IN", "name": "英语（印度）", "nativeName": "English (India)"},
 //    "en-CA": {"tag": "en-CA", "name": "英语（加拿大）", "nativeName": "English (Canada)"},  
@@ -118,24 +118,24 @@ export type BCP47LanguageTags = Record<BCP47LanguageTagName,BCP47LanguageTag>
 // import { getTag,getTags } from 'bcp-language-tags/zh'; 
 import { getTag } from 'bcp-language-tags/en';   
 
-// {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "default": true}
+// {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "primary": true}
 getTag('zh-CN') 
 // {"tag": "zh-TW", "name": "Chinese (Traditional - Taiwan)", "nativeName": "繁體中文 (臺灣)"}
 getTag('zh-TW') 
-// {"tag": "en-US", "name": "English (United States)", "nativeName": "English (United States)", "default": true}
+// {"tag": "en-US", "name": "English (United States)", "nativeName": "English (United States)", "primary": true}
 getTag('en-US') 
 
 // return default language tag
-// {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "default": true}
+// {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "primary": true}
 getTag('zh') 
-// {"tag": "en-US", "name": "English (United States)", "nativeName": "English (United States)", "default": true}
+// {"tag": "en-US", "name": "English (United States)", "nativeName": "English (United States)", "primary": true}
 getTag('en') 
 
 // return all language tags
 getTags("zh")
 // output：
 //   [
-//      {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "default": true}
+//      {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "primary": true}
 //      {"tag": "zh-TW", "name": "Chinese (Traditional - Taiwan)", "nativeName": "繁體中文 (臺灣)"}
 //      {"tag": "zh-HK", "name": "Chinese (Traditional - Hong Kong)", "nativeName": "繁體中文（香港）"}
 //      {"tag": "zh-MO", "name": "Chinese (Traditional - Macau)", "nativeName": "繁體中文 (Traditional Chinese - Macau)"}
@@ -144,8 +144,21 @@ getTags("zh")
 //      {"tag": "zh-CHT", "name": "Chinese (Traditional)", "nativeName": "繁體中文 (Traditional Chinese)"}
 //   ]
 
-// return default language tags
-getDefaultTags()
+// return primary language tags
+getPrimaryTags()
+
+[
+    {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "primary": true},
+    {"tag": "en-US", "name": "English (United States)", "nativeName": "English (United States)", "primary": true}
+    {"tag": "es-ES", "name": "Spanish (Spain)", "nativeName": "Español (España)", "primary": true },
+    {"tag": "ar-EG", "name": "Arabic (Egypt)", "nativeName": "العربية (مصر)", "primary": true },
+    {"tag": "de-DE", "name": "German (Germany)", "nativeName": "Deutsch (Deutschland)", "primary": true },
+    {"tag": "fr-FR", "name": "French (France)", "nativeName": "Français (France)", "primary": true },
+    {"tag": "it-IT", "name": "Italian (Italy)", "nativeName": "Italiano (Italia)", "primary": true },
+    {"tag": "ja-JP", "name": "Japanese (Japan)", "nativeName": "日本語 (日本)", "primary": true },
+    {"tag": "ko-KR", "name": "Korean (South Korea)", "nativeName": "한국어 (대한민국)", "primary": true },
+    {"tag": "ru-RU", "name": "Russian (Russia)", "nativeName": "Русский (Россия)", "primary": true }
+]
 
 
 ```

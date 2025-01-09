@@ -30,10 +30,10 @@ export type BCP47LanguageTagName =
 
 
 export type BCP47LanguageTag = {
-    tag: string 
-    name: string
+    tag       : string 
+    name      : string
     nativeName: string
-    default?: boolean
+    primary   : boolean 
 }
 
 export type BCP47LanguageTags = Record<BCP47LanguageTagName,BCP47LanguageTag>

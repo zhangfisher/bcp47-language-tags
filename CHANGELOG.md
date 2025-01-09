@@ -6,5 +6,5 @@
 
 - 23e1b3c: fix en types
 - ca36baa: [Fix] fix en types error
-  [Feat] add getDefaultTags function
-- f82dfef: add getDefaultTags
+  [Feat] add getPrimaryTags function
+- f82dfef: add getPrimaryTags
