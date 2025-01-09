@@ -65,9 +65,11 @@ import { tags } from 'bcp-language-tags/ru';
 import { tags } from 'bcp-language-tags/ar';
 import { tags } from 'bcp-language-tags/pt';
 import { tags } from 'bcp-language-tags/nl';
+```
 
+### List of all language tags
 
-// 
+```typescript
 import allTags  from 'bcp-language-tags';
 // {
 //    "zh-CN": {
@@ -90,7 +92,7 @@ import allTags  from 'bcp-language-tags';
 ```
 
 
-## TypeScript
+### TypeScript
 
 ```typescript
 import type { BCP47LanguageTag,BCP47LanguageTagName } from 'bcp-language-tags/zh';
