@@ -1,5 +1,11 @@
 # bcp47-language-tags
 
+## 1.0.6
+
+### Patch Changes
+
+- 650c19b: add PrimaryLanguageTages type
+
 ## 1.0.5
 
 ### Patch Changes
