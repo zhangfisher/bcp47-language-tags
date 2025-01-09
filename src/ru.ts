@@ -131,6 +131,6 @@ export const tags = {
 
 const { getTag, getTags, getDefaultTags } = createTagUtils(tags)
 export {
-    getTag, getTags,getDefaultTags
+    getTag, getTags,getDefaultTags 
 }
 export * from './types'    
