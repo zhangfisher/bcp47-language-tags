@@ -1,15 +1,15 @@
 {
 	"name": "bcp47-language-tags",
-	"version": "1.0.1",
-  	"main": "dist/index.js",
+	"version": "1.0.2",
+	"main": "dist/index.js",
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
 	"description": "list BCP 47 language tags and types",
 	"homepage": "https://github.com/zhangfisher/bcp47-language-tags",
 	"repository": {
-        "type": "git",
-        "url": "git+https://github.com/zhangfisher/bcp47-language-tags"
-    },
+		"type": "git",
+		"url": "git+https://github.com/zhangfisher/bcp47-language-tags"
+	},
 	"files": [
 		"dist",
 		"LICENSE",
@@ -21,9 +21,9 @@
 		"i18n",
 		"language",
 		"locale"
-  	],
+	],
 	"exports": {
-		".": {			
+		".": {
 			"types": "./dist/zh.d.ts",
 			"require": "./dist/index.js",
 			"import": "./dist/index.mjs"
@@ -33,42 +33,42 @@
 			"require": "./dist/en.js",
 			"import": "./dist/en.mjs"
 		},
-		"./zh": {			
+		"./zh": {
 			"types": "./dist/zh.d.ts",
 			"require": "./dist/zh.js",
 			"import": "./dist/zh.mjs"
 		},
-		"./de":{
+		"./de": {
 			"types": "./dist/de.d.ts",
 			"require": "./dist/de.js",
 			"import": "./dist/de.mjs"
 		},
-		"./fr":{
+		"./fr": {
 			"types": "./dist/fr.d.ts",
 			"require": "./dist/fr.js",
 			"import": "./dist/fr.mjs"
 		},
-		"./it":{
+		"./it": {
 			"types": "./dist/it.d.ts",
 			"require": "./dist/it.js",
 			"import": "./dist/it.mjs"
 		},
-		"./jp":{
+		"./jp": {
 			"types": "./dist/jp.d.ts",
 			"require": "./dist/jp.js",
 			"import": "./dist/jp.mjs"
 		},
-		"./ko":{
+		"./ko": {
 			"types": "./dist/ko.d.ts",
 			"require": "./dist/ko.js",
 			"import": "./dist/ko.mjs"
 		},
-		"./ru":{
-			"types":"./dist/ru.d.ts",
+		"./ru": {
+			"types": "./dist/ru.d.ts",
 			"require": "./dist/ru.js",
 			"import": "./dist/ru.mjs"
 		},
-		"./es":{
+		"./es": {
 			"types": "./dist/es.d.ts",
 			"require": "./dist/es.js",
 			"import": "./dist/es.mjs"
