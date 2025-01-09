@@ -1,5 +1,11 @@
 # bcp47-language-tags
 
+## 1.0.3
+
+### Patch Changes
+
+- 6fbe376: fix release
+
 ## 1.0.2
 
 ### Patch Changes
