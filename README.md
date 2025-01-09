@@ -1,4 +1,4 @@
-# bcp-Language-Tags
+# bcp47-language-tags
 
 list of language tags and typescript type for the `BCP-47` standard.
 
@@ -7,18 +7,18 @@ list of language tags and typescript type for the `BCP-47` standard.
 ### List of language tags
 
 ```typescript
-import LanguageTags from 'bcp-language-tags/en';
+import { tags } from 'bcp-language-tags/en';
 
 for(let tag of tags) {
     console.log(tag);
 }
 // output：
-//    {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文 (Simplified Chinese)", "default": true},
-//    {"tag": "zh-TW", "name": "Chinese (Traditional - Taiwan)", "nativeName": "繁體中文 (Traditional Chinese - Taiwan)"},
-//    {"tag": "zh-HK", "name": "Chinese (Traditional - Hong Kong)", "nativeName": "繁體中文 (Traditional Chinese - Hong Kong)"},
+//    {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "default": true},
+//    {"tag": "zh-TW", "name": "Chinese (Traditional - Taiwan)", "nativeName": "繁體中文 (臺灣)"},
+//    {"tag": "zh-HK", "name": "Chinese (Traditional - Hong Kong)", "nativeName": "繁體中文（香港）"},
 //    {"tag": "zh-MO", "name": "Chinese (Traditional - Macau)", "nativeName": "繁體中文 (Traditional Chinese - Macau)"},
 //    {"tag": "zh-SG", "name": "Chinese (Simplified - Singapore)", "nativeName": "简体中文 (Simplified Chinese - Singapore)"},      
-//    {"tag": "zh-CHS", "name": "Chinese (Simplified)", "nativeName": "简体中文 (Simplified Chinese)"},
+//    {"tag": "zh-CHS", "name": "Chinese (Simplified)", "nativeName": "简体中文"},
 //    {"tag": "zh-CHT", "name": "Chinese (Traditional)", "nativeName": "繁體中文 (Traditional Chinese)"},
 //    {"tag": "en-US", "name": "English (United States)", "nativeName": "English (United States)", "default": true},
 //    {"tag": "es-CR", "name": "Spanish (Costa Rica)", "nativeName": "Español (Costa Rica)"},
@@ -29,15 +29,15 @@ for(let tag of tags) {
 //    {"tag": "ar-IQ", "name": "Arabic (Iraq)", "nativeName": "العربية (العراق)"},
 //    {"tag": "ar-SD", "name": "Arabic (Sudan)", "nativeName": "العربية (السودان)"},
 //    .....
-import LanguageTags from 'bcp-language-tags/zh';
+import { tags } from 'bcp-language-tags/zh';
 
 for(let tag of tags) {
     console.log(tag);
 }
 // output：
-//    "zh-CN": {"tag": "zh-CN", "name": "简体中文", "nativeName": "简体中文 (Simplified Chinese)", "default": true},
-//    "zh-TW": {"tag": "zh-TW", "name": "繁体中文（台湾）", "nativeName": "繁體中文 (Traditional Chinese - Taiwan)"}, 
-//    "zh-CHS": {"tag": "zh-CHS", "name": "简体中文", "nativeName": "简体中文 (Simplified Chinese)"},
+//    "zh-CN": {"tag": "zh-CN", "name": "简体中文", "nativeName": "简体中文", "default": true},
+//    "zh-TW": {"tag": "zh-TW", "name": "繁体中文（台湾）", "nativeName": "繁體中文 (臺灣)"}, 
+//    "zh-CHS": {"tag": "zh-CHS", "name": "简体中文", "nativeName": "简体中文"},
 //    "zh-CHT": {"tag": "zh-CHT", "name": "繁体中文", "nativeName": "繁體中文 (Traditional Chinese)"},
 //    "en-US": {"tag": "en-US", "name": "英语（美国）", "nativeName": "English (United States)", "default": true},
 //    "en-GB": {"tag": "en-GB", "name": "英语（英国）", "nativeName": "English (United Kingdom)"},
@@ -50,6 +50,17 @@ for(let tag of tags) {
 //    "ar-IQ": {"tag": "ar-IQ", "name": "阿拉伯语（伊拉克）", "nativeName": "العربية (العراق)"},
 //    "ar-SD": {"tag": "ar-SD", "name": "阿拉伯语（苏丹）", "nativeName": "العربية (السودان)"},
 //    ...
+
+// Supoort language :
+import { tags } from 'bcp-language-tags/de'
+import { tags } from 'bcp-language-tags/en';
+import { tags } from 'bcp-language-tags/es';
+import { tags } from 'bcp-language-tags/fr';
+import { tags } from 'bcp-language-tags/it';
+import { tags } from 'bcp-language-tags/jp';
+import { tags } from 'bcp-language-tags/ko';
+import { tags } from 'bcp-language-tags/ru';
+
 ```
 
 
@@ -94,7 +105,7 @@ export type BCP47LanguageTag = {
     tag: string 
     name: string
     nativeName: string
-    primary?: boolean
+    default?: boolean
 }
 
 export type BCP47LanguageTags = Record<BCP47LanguageTagName,BCP47LanguageTag>
@@ -107,27 +118,34 @@ export type BCP47LanguageTags = Record<BCP47LanguageTagName,BCP47LanguageTag>
 // import { getTag,getTags } from 'bcp-language-tags/zh'; 
 import { getTag } from 'bcp-language-tags/en';   
 
-
-getTag('zh-CN') // {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文 (Simplified Chinese)", "default": true}
-getTag('zh-TW') // {"tag": "zh-TW", "name": "Chinese (Traditional - Taiwan)", "nativeName": "繁體中文 (Traditional Chinese - Taiwan)"}
-getTag('en-US') // {"tag": "en-US", "name": "English (United States)", "nativeName": "English (United States)", "default": true}
+// {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "default": true}
+getTag('zh-CN') 
+// {"tag": "zh-TW", "name": "Chinese (Traditional - Taiwan)", "nativeName": "繁體中文 (臺灣)"}
+getTag('zh-TW') 
+// {"tag": "en-US", "name": "English (United States)", "nativeName": "English (United States)", "default": true}
+getTag('en-US') 
 
 // return default language tag
-getTag('zh') // {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文 (Simplified Chinese)", "default": true}
-getTag('en') // {"tag": "en-US", "name": "English (United States)", "nativeName": "English (United States)", "default": true}
+// {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "default": true}
+getTag('zh') 
+// {"tag": "en-US", "name": "English (United States)", "nativeName": "English (United States)", "default": true}
+getTag('en') 
 
 // return all language tags
 getTags("zh")
 // output：
 //   [
-//      {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文 (Simplified Chinese)", "default": true}
-//      {"tag": "zh-TW", "name": "Chinese (Traditional - Taiwan)", "nativeName": "繁體中文 (Traditional Chinese - Taiwan)"}
-//      {"tag": "zh-HK", "name": "Chinese (Traditional - Hong Kong)", "nativeName": "繁體中文 (Traditional Chinese - Hong Kong)"}
+//      {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "default": true}
+//      {"tag": "zh-TW", "name": "Chinese (Traditional - Taiwan)", "nativeName": "繁體中文 (臺灣)"}
+//      {"tag": "zh-HK", "name": "Chinese (Traditional - Hong Kong)", "nativeName": "繁體中文（香港）"}
 //      {"tag": "zh-MO", "name": "Chinese (Traditional - Macau)", "nativeName": "繁體中文 (Traditional Chinese - Macau)"}
 //      {"tag": "zh-SG", "name": "Chinese (Simplified - Singapore)", "nativeName": "简体中文 (Simplified Chinese - Singapore)"}
-//      {"tag": "zh-CHS", "name": "Chinese (Simplified)", "nativeName": "简体中文 (Simplified Chinese)"}
+//      {"tag": "zh-CHS", "name": "Chinese (Simplified)", "nativeName": "简体中文"}
 //      {"tag": "zh-CHT", "name": "Chinese (Traditional)", "nativeName": "繁體中文 (Traditional Chinese)"}
 //   ]
+
+// return default language tags
+getDefaultTags()
 
 
 ```

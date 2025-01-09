@@ -1,13 +1,13 @@
 import { createTagUtils } from './utils'
 
 export const tags = {
-    "zh-CN": {"tag": "zh-CN", "name": "简体中文", "nativeName": "简体中文 (Simplified Chinese)", "default": true},
-    "zh-TW": {"tag": "zh-TW", "name": "繁体中文（台湾）", "nativeName": "繁體中文 (Traditional Chinese - Taiwan)"},
-    "zh-HK": {"tag": "zh-HK", "name": "繁体中文（香港）", "nativeName": "繁體中文 (Traditional Chinese - Hong Kong)"},
-    "zh-SG": {"tag": "zh-SG", "name": "简体中文（新加坡）", "nativeName": "简体中文 (Simplified Chinese - Singapore)"},
-    "zh-MO": {"tag": "zh-MO", "name": "繁体中文（澳门）", "nativeName": "繁體中文 (Traditional Chinese - Macau)"},
-    "zh-CHS": {"tag": "zh-CHS", "name": "简体中文", "nativeName": "简体中文 (Simplified Chinese)"},
-    "zh-CHT": {"tag": "zh-CHT", "name": "繁体中文", "nativeName": "繁體中文 (Traditional Chinese)"},
+    "zh-CN": {"tag": "zh-CN", "name": "简体中文", "nativeName": "简体中文", "default": true},
+    "zh-TW": {"tag": "zh-TW", "name": "繁体中文（台湾）", "nativeName": "繁體中文 (臺灣)"},
+    "zh-HK": {"tag": "zh-HK", "name": "繁体中文（香港）", "nativeName": "繁體中文（香港）"},
+    "zh-SG": {"tag": "zh-SG", "name": "简体中文（新加坡）", "nativeName": "简体中文 (新加坡)"},
+    "zh-MO": {"tag": "zh-MO", "name": "繁体中文（澳门）", "nativeName": "繁體中文 (澳門)"},
+    "zh-CHS": {"tag": "zh-CHS", "name": "简体中文", "nativeName": "简体中文"},
+    "zh-CHT": {"tag": "zh-CHT", "name": "繁体中文", "nativeName": "繁體中文"},
     "en-US": {"tag": "en-US", "name": "英语（美国）", "nativeName": "English (United States)", "default": true},
     "en-GB": {"tag": "en-GB", "name": "英语（英国）", "nativeName": "English (United Kingdom)"},
     "en-IN": {"tag": "en-IN", "name": "英语（印度）", "nativeName": "English (India)"},
@@ -129,10 +129,8 @@ export const tags = {
 }
   
 
-const { getTag, getTags } = createTagUtils(tags)
+const { getTag, getTags, getDefaultTags } = createTagUtils(tags)
 export {
-    getTag, getTags
+    getTag, getTags,getDefaultTags
 }
-
-export * from './types'    
 export * from './types'    
