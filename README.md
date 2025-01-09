@@ -9,6 +9,7 @@ list of language tags and typescript type for the `BCP-47` standard.
 ```typescript
 import { tags } from 'bcp-language-tags/en';
 
+// list of language tags
 for(let tag of tags) {
     console.log(tag);
 }
@@ -89,7 +90,7 @@ import allTags  from 'bcp-language-tags';
 ```
 
 
-### TypeScript
+## TypeScript
 
 ```typescript
 import type { BCP47LanguageTag,BCP47LanguageTagName } from 'bcp-language-tags/zh';
@@ -136,7 +137,11 @@ export type BCP47LanguageTag = {
 export type BCP47LanguageTags = Record<BCP47LanguageTagName,BCP47LanguageTag>
 ```
 
-### API
+## API
+
+### getTag(tag: string): BCP47LanguageTag
+
+get language tag.
 
 ```typescript
 
@@ -155,7 +160,13 @@ getTag('en-US')
 getTag('zh') 
 // {"tag": "en-US", "name": "English (United States)", "nativeName": "English (United States)", "primary": true}
 getTag('en') 
+```
 
+### getTags(tag: string): BCP47LanguageTag[]
+
+list of language tags.
+
+```typescript
 // return all language tags
 getTags("zh")
 // output：
@@ -168,10 +179,15 @@ getTags("zh")
 //      {"tag": "zh-CHS", "name": "Chinese (Simplified)", "nativeName": "简体中文"}
 //      {"tag": "zh-CHT", "name": "Chinese (Traditional)", "nativeName": "繁體中文 (Traditional Chinese)"}
 //   ]
+```
 
+### getPrimaryTags(): BCP47LanguageTag[]
+
+list of primary language tags.
+
+```typescript
 // return primary language tags
 getPrimaryTags()
-
 [
     {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "primary": true},
     {"tag": "en-US", "name": "English (United States)", "nativeName": "English (United States)", "primary": true}
@@ -186,6 +202,4 @@ getPrimaryTags()
     {"tag": "pt-PT", "name": "Portuguese (Portugal)", "nativeName": "Português (Portugal)", "primary": true },
     {"tag": "ar-EG", "name": "Arabic (Egypt)", "nativeName": "العربية (مصر)", "primary": true }
 ]
-
-
 ```
