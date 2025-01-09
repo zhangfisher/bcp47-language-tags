@@ -11,6 +11,8 @@ import { tags as arTags } from "./ar"
 import { tags as ptTags } from "./pt"
 import { tags as nlTags } from "./nl"
 
+import { PrimaryLanguageTages } from "./types";
+
 export default {
     "zh-CN": zhTags,
     "en-US": enTags,
@@ -24,6 +26,6 @@ export default {
     "ar-EG": arTags,
     "pt-PT": ptTags,
     "nl-NL": nlTags
-}
+} as PrimaryLanguageTages
 
 export * from './types'

@@ -37,3 +37,19 @@ export type BCP47LanguageTag = {
 }
 
 export type BCP47LanguageTags = Record<BCP47LanguageTagName,BCP47LanguageTag>
+
+export type PrimaryLanguageTags = 
+  "zh-CN" 
+  | "en-US" 
+  | "ja-JP" 
+  | "ko-KR" 
+  | "ru-RU" 
+  | "es-ES" 
+  | "fr-FR" 
+  | "de-DE" 
+  | "it-IT" 
+  | "ar-EG" 
+  | "pt-PT" 
+  | "nl-NL" 
+
+export type PrimaryLanguageTages = Record<PrimaryLanguageTags,BCP47LanguageTags>
