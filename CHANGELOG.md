@@ -1,5 +1,11 @@
 # bcp47-language-tags
 
+## 1.0.4
+
+### Patch Changes
+
+- e56fe03: rename default to primary
+
 ## 1.0.3
 
 ### Patch Changes
