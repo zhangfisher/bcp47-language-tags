@@ -1,5 +1,12 @@
 # bcp47-language-tags
 
+## 1.0.5
+
+### Patch Changes
+
+- b60537b: add ar,pt,nl language to primary
+- 6e42cc8: add pr/nl/ar
+
 ## 1.0.4
 
 ### Patch Changes
