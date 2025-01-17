@@ -24,13 +24,16 @@ export function createTagUtils(tags:BCP47LanguageTags){
             })
             return primaryTag ? primaryTag : matchedTags.length>0 ? matchedTags[0] : undefined
         },
-        getTags(language?:string):BCP47LanguageTag[] {
-            if(!language) return Object.values(tags) 
-            const matchedTags:BCP47LanguageTag[] = []           
+        getTags(language?:string | string[]):BCP47LanguageTag[] {
+            if(!language) return Object.values(tags)            
+            const lngs = Array.isArray(language) ? language : [language]
+            const matchedTags:BCP47LanguageTag[] = []                   
             Object.entries(tags).filter(([name,tag])=>{
-                if(name.startsWith(language+"-")){
-                    matchedTags.push(tag)
-                }
+                lngs.forEach(lng=>{
+                    if(name===lng || name.startsWith(lng+"-")){
+                        matchedTags.push(tag)
+                    }
+                })
             })
             return matchedTags
         },

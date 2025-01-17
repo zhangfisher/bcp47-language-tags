@@ -20,9 +20,10 @@ export default defineConfig([
             'src/index.ts'     
         ],
         outDir: 'dist',
-        minify: true,
+        minify: false,
         dts   : true,        
         clean : true,  
+        cjsInterop: true,
         format: ['cjs', 'esm']
     },
     ...languages.map(lng=>{

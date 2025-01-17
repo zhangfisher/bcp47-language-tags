@@ -181,6 +181,11 @@ getTags("zh")
 //      {"tag": "zh-CHS", "name": "Chinese (Simplified)", "nativeName": "简体中文"}
 //      {"tag": "zh-CHT", "name": "Chinese (Traditional)", "nativeName": "繁體中文 (Traditional Chinese)"}
 //   ]
+
+getTags(["zh","en"])
+
+getTags(["zh-CN","en-US"])
+
 ```
 
 ### getPrimaryTags(): BCP47LanguageTag[]
