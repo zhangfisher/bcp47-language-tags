@@ -1,5 +1,11 @@
 # bcp47-language-tags
 
+## 1.0.7
+
+### Patch Changes
+
+- 33cc0e2: getTags support array param
+
 ## 1.0.6
 
 ### Patch Changes
