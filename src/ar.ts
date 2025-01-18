@@ -3,7 +3,7 @@ import { createTagUtils } from './utils'
 export const tags = {
         "zh-CN": {"tag": "zh-CN", "name": "الصينية المبسطة", "nativeName": "简体中文", "primary": true },
         "zh-TW": {"tag": "zh-TW", "name": "الصينية التقليدية - تايوان", "nativeName": "繁體中文 (臺灣)", "primary": false },
-        "zh-HK": {"tag": "zh-HK", "name": "الصينية التقليدية - هونغ كونغ", "nativeName": "繁體中文（香港）", "primary": false },
+        "zh-HK": {"tag": "zh-HK", "name": "الصينية التقليدية - هونغ كونغ", "nativeName": "繁體中文(香港)", "primary": false },
         "zh-MO": {"tag": "zh-MO", "name": "الصينية التقليدية - ماكاو", "nativeName": "繁體中文 (Traditional Chinese - Macau)", "primary": false },
         "zh-SG": {"tag": "zh-SG", "name": "الصينية المبسطة - سنغافورة", "nativeName": "简体中文 (Simplified Chinese - Singapore)", "primary": false },      
         "zh-CHS": {"tag": "zh-CHS", "name": "الصينية المبسطة", "nativeName": "简体中文", "primary": false },

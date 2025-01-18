@@ -2,12 +2,12 @@ import { createTagUtils } from './utils'
 
 export const tags = {
     "zh-CN": {"tag": "zh-CN", "name": "중국어 (간체)", "nativeName": "简体中文", "primary": true },
-    "zh-TW": {"tag": "zh-TW", "name": "중국어 (번체 - 대만)", "nativeName": "繁體中文 (臺灣)", "primary": false},
-    "zh-HK": {"tag": "zh-HK", "name": "중국어 (번체 - 홍콩)", "nativeName": "繁體中文（香港）", "primary": false},
-    "zh-MO": {"tag": "zh-MO", "name": "중국어 (번체 - 마카오)", "nativeName": "繁體中文 (Traditional Chinese - Macau)", "primary": false},
-    "zh-SG": {"tag": "zh-SG", "name": "중국어 (간체 - 싱가포르)", "nativeName": "简体中文 (Simplified Chinese - Singapore)", "primary": false},      
+    "zh-TW": {"tag": "zh-TW", "name": "중국어 (번체 - 대만)", "nativeName": "繁體中文(臺灣)", "primary": false},
+    "zh-HK": {"tag": "zh-HK", "name": "중국어 (번체 - 홍콩)", "nativeName": "繁體中文(香港)", "primary": false},
+    "zh-MO": {"tag": "zh-MO", "name": "중국어 (번체 - 마카오)", "nativeName": "繁體中文(Traditional Chinese - Macau)", "primary": false},
+    "zh-SG": {"tag": "zh-SG", "name": "중국어 (간체 - 싱가포르)", "nativeName": "简体中文(Simplified Chinese - Singapore)", "primary": false},      
     "zh-CHS": {"tag": "zh-CHS", "name": "중국어 (간체)", "nativeName": "简体中文", "primary": false},
-    "zh-CHT": {"tag": "zh-CHT", "name": "중국어 (번체)", "nativeName": "繁體中文 (Traditional Chinese)", "primary": false},
+    "zh-CHT": {"tag": "zh-CHT", "name": "중국어 (번체)", "nativeName": "繁體中文(Traditional Chinese)", "primary": false},
     "en-US": {"tag": "en-US", "name": "영어 (미국)", "nativeName": "English (United States)", "primary": true },
     "en-GB": {"tag": "en-GB", "name": "영어 (영국)", "nativeName": "English (United Kingdom)", "primary": false},
     "en-CA": {"tag": "en-CA", "name": "영어 (캐나다)", "nativeName": "English (Canada)", "primary": false},

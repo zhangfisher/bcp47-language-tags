@@ -2,12 +2,12 @@ import { createTagUtils } from './utils'
 
 export const tags = {
     "zh-CN": {"tag": "zh-CN", "name": "中国語（簡体字）", "nativeName": "简体中文", "primary": true},
-    "zh-TW": {"tag": "zh-TW", "name": "中国語（繁体字 - 台湾）", "nativeName": "繁體中文 (臺灣)", "primary": false},
-    "zh-HK": {"tag": "zh-HK", "name": "中国語（繁体字 - 香港）", "nativeName": "繁體中文（香港）", "primary": false},
-    "zh-MO": {"tag": "zh-MO", "name": "中国語（繁体字 - マカオ）", "nativeName": "繁體中文 (Traditional Chinese - Macau)", "primary": false},
-    "zh-SG": {"tag": "zh-SG", "name": "中国語（簡体字 - シンガポール）", "nativeName": "简体中文 (Simplified Chinese - Singapore)", "primary": false},      
+    "zh-TW": {"tag": "zh-TW", "name": "中国語（繁体字 - 台湾）", "nativeName": "繁體中文(臺灣)", "primary": false},
+    "zh-HK": {"tag": "zh-HK", "name": "中国語（繁体字 - 香港）", "nativeName": "繁體中文(香港)", "primary": false},
+    "zh-MO": {"tag": "zh-MO", "name": "中国語（繁体字 - マカオ）", "nativeName": "繁體中文(Traditional Chinese - Macau)", "primary": false},
+    "zh-SG": {"tag": "zh-SG", "name": "中国語（簡体字 - シンガポール）", "nativeName": "简体中文(Simplified Chinese - Singapore)", "primary": false},      
     "zh-CHS": {"tag": "zh-CHS", "name": "中国語（簡体字）", "nativeName": "简体中文", "primary": false},
-    "zh-CHT": {"tag": "zh-CHT", "name": "中国語（繁体字）", "nativeName": "繁體中文 (Traditional Chinese)", "primary": false},
+    "zh-CHT": {"tag": "zh-CHT", "name": "中国語（繁体字）", "nativeName": "繁體中文(Traditional Chinese)", "primary": false},
     "en-US": {"tag": "en-US", "name": "英語（アメリカ）", "nativeName": "English (United States)", "primary": true },
     "en-GB": {"tag": "en-GB", "name": "英語（イギリス）", "nativeName": "English (United Kingdom)", "primary": false},
     "en-CA": {"tag": "en-CA", "name": "英語（カナダ）", "nativeName": "English (Canada)", "primary": false},

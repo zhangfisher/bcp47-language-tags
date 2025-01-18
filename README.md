@@ -16,7 +16,7 @@ for(let tag of tags) {
 // output：
 //    {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "primary": true},
 //    {"tag": "zh-TW", "name": "Chinese (Traditional - Taiwan)", "nativeName": "繁體中文 (臺灣)"},
-//    {"tag": "zh-HK", "name": "Chinese (Traditional - Hong Kong)", "nativeName": "繁體中文（香港）"},
+//    {"tag": "zh-HK", "name": "Chinese (Traditional - Hong Kong)", "nativeName": "繁體中文(香港)"},
 //    {"tag": "zh-MO", "name": "Chinese (Traditional - Macau)", "nativeName": "繁體中文 (Traditional Chinese - Macau)"},
 //    {"tag": "zh-SG", "name": "Chinese (Simplified - Singapore)", "nativeName": "简体中文 (Simplified Chinese - Singapore)"},      
 //    {"tag": "zh-CHS", "name": "Chinese (Simplified)", "nativeName": "简体中文"},
@@ -83,7 +83,7 @@ import allTags  from 'bcp-language-tags';
 //     "en-US": {
 //          "zh-CN": {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "primary": true},
 //          "zh-TW": {"tag": "zh-TW", "name": "Chinese (Traditional - Taiwan)", "nativeName": "繁體中文 (臺灣)"},
-//          "zh-HK": {"tag": "zh-HK", "name": "Chinese (Traditional - Hong Kong)", "nativeName": "繁體中文（香港）"},
+//          "zh-HK": {"tag": "zh-HK", "name": "Chinese (Traditional - Hong Kong)", "nativeName": "繁體中文(香港)"},
 //          "zh-MO": {"tag": "zh-MO", "name": "Chinese (Traditional - Macau)", "nativeName": "繁體中文 (Traditional Chinese - Macau)
 //          .....
 //      }
@@ -175,7 +175,7 @@ getTags("zh")
 //   [
 //      {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "primary": true}
 //      {"tag": "zh-TW", "name": "Chinese (Traditional - Taiwan)", "nativeName": "繁體中文 (臺灣)"}
-//      {"tag": "zh-HK", "name": "Chinese (Traditional - Hong Kong)", "nativeName": "繁體中文（香港）"}
+//      {"tag": "zh-HK", "name": "Chinese (Traditional - Hong Kong)", "nativeName": "繁體中文(香港)"}
 //      {"tag": "zh-MO", "name": "Chinese (Traditional - Macau)", "nativeName": "繁體中文 (Traditional Chinese - Macau)"}
 //      {"tag": "zh-SG", "name": "Chinese (Simplified - Singapore)", "nativeName": "简体中文 (Simplified Chinese - Singapore)"}
 //      {"tag": "zh-CHS", "name": "Chinese (Simplified)", "nativeName": "简体中文"}

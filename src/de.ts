@@ -2,10 +2,10 @@ import { createTagUtils } from './utils'
 
 export const tags = {
         "zh-CN": {"tag": "zh-CN", "name": "Chinesisch (Vereinfacht)", "nativeName": "简体中文", "primary": true},
-        "zh-TW": {"tag": "zh-TW", "name": "Chinesisch (Traditionell - Taiwan)", "nativeName": "繁體中文 (臺灣)", "primary": false},
-        "zh-HK": {"tag": "zh-HK", "name": "Chinesisch (Traditionell - Hongkong)", "nativeName": "繁體中文（香港）", "primary": false},
-        "zh-MO": {"tag": "zh-MO", "name": "Chinesisch (Traditionell - Macau)", "nativeName": "繁體中文 (Traditional Chinese - Macau)", "primary": false},
-        "zh-SG": {"tag": "zh-SG", "name": "Chinesisch (Vereinfacht - Singapur)", "nativeName": "简体中文 (Simplified Chinese - Singapore)" ,"primary": false }, 
+        "zh-TW": {"tag": "zh-TW", "name": "Chinesisch (Traditionell - Taiwan)", "nativeName": "繁體中文(臺灣)", "primary": false},
+        "zh-HK": {"tag": "zh-HK", "name": "Chinesisch (Traditionell - Hongkong)", "nativeName": "繁體中文(香港)", "primary": false},
+        "zh-MO": {"tag": "zh-MO", "name": "Chinesisch (Traditionell - Macau)", "nativeName": "繁體中文(Traditional Chinese - Macau)", "primary": false},
+        "zh-SG": {"tag": "zh-SG", "name": "Chinesisch (Vereinfacht - Singapur)", "nativeName": "简体中文(Simplified Chinese - Singapore)" ,"primary": false }, 
         "zh-CHS": {"tag": "zh-CHS", "name": "Chinesisch (Vereinfacht)", "nativeName": "简体中文", "primary": false},
         "zh-CHT": {"tag": "zh-CHT", "name": "Chinesisch (Traditionell)", "nativeName": "繁體中文 (Traditional Chinese)", "primary": false},
         "en-US": {"tag": "en-US", "name": "Englisch (Vereinigte Staaten)", "nativeName": "English (United States)", "primary": true},
