@@ -1,5 +1,11 @@
 # bcp47-language-tags
 
+## 1.0.8
+
+### Patch Changes
+
+- 3fc2eea: fix error
+
 ## 1.0.7
 
 ### Patch Changes
