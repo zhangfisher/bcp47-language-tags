@@ -1,5 +1,11 @@
 # bcp47-language-tags
 
+## 1.0.9
+
+### Patch Changes
+
+- bfc8b3b: add language code mapper
+
 ## 1.0.8
 
 ### Patch Changes
