@@ -87,6 +87,46 @@
 			"types": "./dist/nl.d.ts",
 			"require": "./dist/nl.js",
 			"import": "./dist/nl.mjs"
+		}, 
+		"./mapper/baidu":{
+			"types": "./dist/baidu.mapper.d.ts",
+			"require": "./dist/baidu.mapper.js",
+			"import": "./dist/baidu.mapper.mjs"
+		},
+		"./mapper/xunfei":{
+			"types": "./dist/xunfei.mapper.d.ts",
+			"require": "./dist/xunfei.mapper.js",
+			"import": "./dist/xunfei.mapper.mjs"
+		},
+		"./mapper/youdao":{
+			"types": "./dist/youdao.mapper.d.ts",
+			"require": "./dist/youdao.mapper.js",
+			"import": "./dist/youdao.mapper.mjs"
+		},
+		"./mapper/tencent":{
+			"types": "./dist/tencent.mapper.d.ts",
+			"require": "./dist/tencent.mapper.js",
+			"import": "./dist/tencent.mapper.mjs"
+		},
+		"./mapper/google":{
+			"types": "./dist/iso639-1.mapper.d.ts",
+			"require": "./dist/iso639-1.mapper.js",
+			"import": "./dist/iso639-1.mapper.mjs"
+		},
+		"./mapper/iso639-1":{
+			"types": "./dist/iso639-1.mapper.d.ts",
+			"require": "./dist/iso639-1.mapper.js",
+			"import": "./dist/iso639-1.mapper.mjs"
+		},
+		"./mapper/iso639-2":{
+			"types": "./dist/iso639-2.mapper.d.ts",
+			"require": "./dist/iso639-2.mapper.js",
+			"import": "./dist/iso639-2.mapper.mjs"
+		},
+		"./mapper/iso639-3":{
+			"types": "./dist/iso639-3.mapper.d.ts",
+			"require": "./dist/iso639-3.mapper.js",
+			"import": "./dist/iso639-3.mapper.mjs"
 		}
 	},
 	"scripts": {

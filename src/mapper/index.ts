@@ -1,0 +1,7 @@
+export * as baidu from "./baidu"
+export * as youdao from "./youdao"
+export * as tencent from "./tencent" 
+export * as xunfei from "./xunfei"
+export * as ISO6391 from "./iso639-1"
+export * as ISO6392 from "./iso639-2"
+export * as ISO6393 from "./iso639-3"

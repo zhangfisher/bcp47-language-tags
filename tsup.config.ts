@@ -14,13 +14,24 @@ const languages = [
     'pt',
     'nl'
 ]
+
+const mapTo = [
+    "baidu",
+    "tencent",
+    "xunfei",
+    "youdao",
+    "iso639-1",
+    "iso639-2",
+    "iso639-3"
+]
+
 export default defineConfig([
     {
         entry: [
             'src/index.ts'     
         ],
         outDir: 'dist',
-        minify: false,
+        minify: true,
         dts   : true,        
         clean : true,  
         cjsInterop: true,
@@ -32,9 +43,20 @@ export default defineConfig([
                 `src/${lng}.ts`
             ],
             outDir    : 'dist',
-            minify    : false,
-            dts       : true,        
-            clean     : true, 
+            minify    : true,
+            dts       : true,    
+            cjsInterop: true,
+            format    : ['cjs', 'esm']
+        } as Options
+    }),
+    ...mapTo.map(to=>{
+        return {
+            entry: [
+                `src/mapper/${to}.ts`
+            ],
+            outDir    : 'dist',
+            minify    : true,
+            dts       : true,  
             cjsInterop: true,
             format    : ['cjs', 'esm']
         } as Options
