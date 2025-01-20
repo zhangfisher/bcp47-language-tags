@@ -144,14 +144,14 @@ export type BCP47LanguageTags = Record<BCP47LanguageTagName,BCP47LanguageTag>
 mapping bcp47 language tag to other language tag.
 
 ```typescript
-import baidu from 'bcp-language-tags/mapper/baidu';
-import google from 'bcp-language-tags/mapper/google';
-import xunfei from 'bcp-language-tags/mapper/xunfei';
-import tencent from 'bcp-language-tags/mapper/tencent';
-import google from 'bcp-language-tags/mapper/google';
-import iso6391 from 'bcp-language-tags/mapper/iso639-1';
-import iso6392 from 'bcp-language-tags/mapper/iso639-2';
-import iso6393 from 'bcp-language-tags/mapper/iso639-3';
+import baidu from 'bcp47-language-tags/mapper/baidu';
+import google from 'bcp47-language-tags/mapper/google';
+import xunfei from 'bcp47-language-tags/mapper/xunfei';
+import tencent from 'bcp47-language-tags/mapper/tencent';
+import google from 'bcp47-language-tags/mapper/google';
+import iso6391 from 'bcp47-language-tags/mapper/iso639-1';
+import iso6392 from 'bcp47-language-tags/mapper/iso639-2';
+import iso6393 from 'bcp47-language-tags/mapper/iso639-3';
 
 baidu['zh-CN']          // zh
 iso6391['zh-CN']        // zh
