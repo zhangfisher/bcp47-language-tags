@@ -1,5 +1,11 @@
 # bcp47-language-tags
 
+## 1.1.0
+
+### Minor Changes
+
+- f4aabf2: fix mapper ref
+
 ## 1.0.9
 
 ### Patch Changes
