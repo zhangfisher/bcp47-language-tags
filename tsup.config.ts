@@ -54,7 +54,7 @@ export default defineConfig([
             entry: [
                 `src/mapper/${to}.ts`
             ],
-            outDir    : 'dist',
+            outDir    : 'dist/mapper',
             minify    : true,
             dts       : true,  
             cjsInterop: true,

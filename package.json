@@ -89,44 +89,44 @@
 			"import": "./dist/nl.mjs"
 		},
 		"./mapper/baidu": {
-			"types": "./dist/baidu.mapper.d.ts",
-			"require": "./dist/baidu.mapper.js",
-			"import": "./dist/baidu.mapper.mjs"
+			"types": "./dist/mapper/baidu.d.ts",
+			"require": "./dist/mapper/baidu.js",
+			"import": "./dist/mapper/baidu.mjs"
 		},
 		"./mapper/xunfei": {
-			"types": "./dist/xunfei.mapper.d.ts",
-			"require": "./dist/xunfei.mapper.js",
-			"import": "./dist/xunfei.mapper.mjs"
+			"types": "./dist/mapper/xunfei.d.ts",
+			"require": "./dist/mapper/xunfei.js",
+			"import": "./dist/mapper/xunfei.mjs"
 		},
 		"./mapper/youdao": {
-			"types": "./dist/youdao.mapper.d.ts",
-			"require": "./dist/youdao.mapper.js",
-			"import": "./dist/youdao.mapper.mjs"
+			"types": "./dist/mapper/youdao.d.ts",
+			"require": "./dist/mapper/youdao.js",
+			"import": "./dist/mapper/youdao.mjs"
 		},
 		"./mapper/tencent": {
-			"types": "./dist/tencent.mapper.d.ts",
-			"require": "./dist/tencent.mapper.js",
-			"import": "./dist/tencent.mapper.mjs"
+			"types": "./dist/mapper/tencent.d.ts",
+			"require": "./dist/mapper/tencent.js",
+			"import": "./dist/mapper/tencent.mjs"
 		},
 		"./mapper/google": {
-			"types": "./dist/iso639-1.mapper.d.ts",
-			"require": "./dist/iso639-1.mapper.js",
-			"import": "./dist/iso639-1.mapper.mjs"
+			"types": "./dist/mapper/iso639-1.d.ts",
+			"require": "./dist/mapper/iso639-1.js",
+			"import": "./dist/mapper/iso639-1.mjs"
 		},
 		"./mapper/iso639-1": {
-			"types": "./dist/iso639-1.mapper.d.ts",
-			"require": "./dist/iso639-1.mapper.js",
-			"import": "./dist/iso639-1.mapper.mjs"
+			"types": "./dist/mapper/iso639-1.d.ts",
+			"require": "./dist/mapper/iso639-1.js",
+			"import": "./dist/mapper/iso639-1.mjs"
 		},
 		"./mapper/iso639-2": {
-			"types": "./dist/iso639-2.mapper.d.ts",
-			"require": "./dist/iso639-2.mapper.js",
-			"import": "./dist/iso639-2.mapper.mjs"
+			"types": "./dist/mapper/iso639-2.d.ts",
+			"require": "./dist/mapper/iso639-2.js",
+			"import": "./dist/mapper/iso639-2.mjs"
 		},
 		"./mapper/iso639-3": {
-			"types": "./dist/iso639-3.mapper.d.ts",
-			"require": "./dist/iso639-3.mapper.js",
-			"import": "./dist/iso639-3.mapper.mjs"
+			"types": "./dist/mapper/iso639-3.d.ts",
+			"require": "./dist/mapper/iso639-3.js",
+			"import": "./dist/mapper/iso639-3.mjs"
 		}
 	},
 	"scripts": {
