@@ -5,7 +5,7 @@ export const tags = {
     tag: "zh-CN",
     name: "Zjednodušená čínština",
     nativeName: "简体中文",
-    primary: true,
+    primary: false,
   },
   "zh-TW": {
     tag: "zh-TW",
@@ -47,7 +47,7 @@ export const tags = {
     tag: "en-US",
     name: "Angličtina (Spojené státy)",
     nativeName: "English (United States)",
-    primary: true,
+    primary: false,
   },
   "en-GB": {
     tag: "en-GB",
