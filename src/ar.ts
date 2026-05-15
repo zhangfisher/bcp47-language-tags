@@ -22,6 +22,8 @@ export const tags = {
         "en-CB": {"tag": "en-CB", "name": "الإنجليزية (الكاريبي)", "nativeName": "English (Caribbean)", "primary": false },
         "en-JM": {"tag": "en-JM", "name": "الإنجليزية (جامايكا)", "nativeName": "English (Jamaica)", "primary": false },
         "en-TT": {"tag": "en-TT", "name": "الإنجليزية (ترينيداد وتوباغو)", "nativeName": "English (Trinidad and Tobago)", "primary": false },
+        "en-NG": {"tag": "en-NG", "name": "الإنجليزية (نيجيريا)", "nativeName": "English (Nigeria)", "primary": false },
+        "en-UG": {"tag": "en-UG", "name": "الإنجليزية (أوغندا)", "nativeName": "English (Uganda)", "primary": false },
         "hi-IN": {"tag": "hi-IN", "name": "الهندية (الهند)", "nativeName": "हिन्दी (Hindi)", "primary": false },
         "es-ES": {"tag": "es-ES", "name": "الإسبانية (إسبانيا)", "nativeName": "Español (España)", "primary": true },
         "es-MX": {"tag": "es-MX", "name": "الإسبانية (المكسيك)", "nativeName": "Español (México)", "primary": false },
@@ -73,11 +75,14 @@ export const tags = {
         "fr-CH": {"tag": "fr-CH", "name": "الفرنسية (سويسرا)", "nativeName": "Français (Suisse)", "primary": false },
         "fr-LU": {"tag": "fr-LU", "name": "الفرنسية (لوكسمبورغ)", "nativeName": "Français (Luxembourg)", "primary": false },
         "fr-MC": {"tag": "fr-MC", "name": "الفرنسية (موناكو)", "nativeName": "Français (Monaco)", "primary": false },
+        "fr-CD": {"tag": "fr-CD", "name": "الفرنسية (جمهورية الكونغو الديمقراطية)", "nativeName": "Français (République démocratique du Congo)", "primary": false },
         "ko-KR": {"tag": "ko-KR", "name": "الكورية (كوريا الجنوبية)", "nativeName": "한국어 (대한민국)", "primary": true },
+        "ko-KP": {"tag": "ko-KP", "name": "الكورية (كوريا الشمالية)", "nativeName": "한국어 (조선민주주인민공화국)", "primary": false },
         "it-IT": {"tag": "it-IT", "name": "الإيطالية (إيطاليا)", "nativeName": "Italiano (Italia)", "primary": true },
         "it-CH": {"tag": "it-CH", "name": "الإيطالية (سويسرا)", "nativeName": "Italiano (Svizzera)", "primary": false },
         "nl-NL": {"tag": "nl-NL", "name": "الهولندية (هولندا)", "nativeName": "Nederlands (Nederland)", "primary": true },
         "nl-BE": {"tag": "nl-BE", "name": "الهولندية (بلجيكا)", "nativeName": "Nederlands (België)", "primary": false },
+        "bn-BD": {"tag": "bn-BD", "name": "البنغالية (بنغلاديش)", "nativeName": "বাংলা (বাংলাদেশ)", "primary": false },
         "pl-PL": {"tag": "pl-PL", "name": "البولندية (بولندا)", "nativeName": "Polski (Polska)", "primary": false },
         "vi-VN": {"tag": "vi-VN", "name": "الفيتنامية (فيتنام)", "nativeName": "Tiếng Việt (Việt Nam)", "primary": false },
         "tr-TR": {"tag": "tr-TR", "name": "التركية (تركيا)", "nativeName": "Türkçe (Türkiye)", "primary": false },
@@ -125,7 +130,9 @@ export const tags = {
         "fa-IR": {"tag": "fa-IR", "name": "الفارسية (إيران)", "nativeName": "فارسی (ایران)", "primary": false },
         "syr-SY": {"tag": "syr-SY", "name": "السريانية (سوريا)", "nativeName": "ܣܘܪܝܝܐ (ܣܘܪܝܐ)", "primary": false },
         "div-MV": {"tag": "div-MV", "name": "الديفيهية (المالديف)", "nativeName": "ދިވެހި (މޯލްޑިވްސް)", "primary": false },
-        "ka-GE": {"tag": "ka-GE", "name": "الجورجية (جورجيا)", "nativeName": "ქართული (საქართველო)", "primary": false },      
+        "ka-GE": {"tag": "ka-GE", "name": "الجورجية (جورجيا)", "nativeName": "ქართული (საქართველო)", "primary": false },
+        "am-ET": {"tag": "am-ET", "name": "الأمهرية (إثيوبيا)", "nativeName": "አማርኛ (ኢትዮጵያ)", "primary": false },
+        "my-MM": {"tag": "my-MM", "name": "البورمية (ميانمار)", "nativeName": "မြန်မာ (မြန်မာ)", "primary": false }
 }
 
 

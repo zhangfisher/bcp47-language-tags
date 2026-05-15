@@ -1,143 +1,161 @@
 {
-	"name": "bcp47-language-tags",
-	"version": "1.1.0",
-	"main": "dist/index.js",
-	"module": "dist/index.mjs",
-	"types": "dist/index.d.ts",
-	"description": "list BCP 47 language tags and types",
-	"homepage": "https://github.com/zhangfisher/bcp47-language-tags",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/zhangfisher/bcp47-language-tags"
-	},
-	"files": [
-		"dist",
-		"LICENSE",
-		"README.md"
-	],
-	"keywords": [
-		"bcp47",
-		"internationalization",
-		"i18n",
-		"language",
-		"locale"
-	],
-	"exports": {
-		".": {
-			"types": "./dist/zh.d.ts",
-			"require": "./dist/index.js",
-			"import": "./dist/index.mjs"
-		},
-		"./en": {
-			"types": "./dist/en.d.ts",
-			"require": "./dist/en.js",
-			"import": "./dist/en.mjs"
-		},
-		"./zh": {
-			"types": "./dist/zh.d.ts",
-			"require": "./dist/zh.js",
-			"import": "./dist/zh.mjs"
-		},
-		"./de": {
-			"types": "./dist/de.d.ts",
-			"require": "./dist/de.js",
-			"import": "./dist/de.mjs"
-		},
-		"./fr": {
-			"types": "./dist/fr.d.ts",
-			"require": "./dist/fr.js",
-			"import": "./dist/fr.mjs"
-		},
-		"./it": {
-			"types": "./dist/it.d.ts",
-			"require": "./dist/it.js",
-			"import": "./dist/it.mjs"
-		},
-		"./jp": {
-			"types": "./dist/jp.d.ts",
-			"require": "./dist/jp.js",
-			"import": "./dist/jp.mjs"
-		},
-		"./ko": {
-			"types": "./dist/ko.d.ts",
-			"require": "./dist/ko.js",
-			"import": "./dist/ko.mjs"
-		},
-		"./ru": {
-			"types": "./dist/ru.d.ts",
-			"require": "./dist/ru.js",
-			"import": "./dist/ru.mjs"
-		},
-		"./es": {
-			"types": "./dist/es.d.ts",
-			"require": "./dist/es.js",
-			"import": "./dist/es.mjs"
-		},
-		"./ar": {
-			"types": "./dist/ar.d.ts",
-			"require": "./dist/ar.js",
-			"import": "./dist/ar.mjs"
-		},
-		"./pt": {
-			"types": "./dist/pt.d.ts",
-			"require": "./dist/pt.js",
-			"import": "./dist/pt.mjs"
-		},
-		"./nl": {
-			"types": "./dist/nl.d.ts",
-			"require": "./dist/nl.js",
-			"import": "./dist/nl.mjs"
-		},
-		"./mapper/baidu": {
-			"types": "./dist/mapper/baidu.d.ts",
-			"require": "./dist/mapper/baidu.js",
-			"import": "./dist/mapper/baidu.mjs"
-		},
-		"./mapper/xunfei": {
-			"types": "./dist/mapper/xunfei.d.ts",
-			"require": "./dist/mapper/xunfei.js",
-			"import": "./dist/mapper/xunfei.mjs"
-		},
-		"./mapper/youdao": {
-			"types": "./dist/mapper/youdao.d.ts",
-			"require": "./dist/mapper/youdao.js",
-			"import": "./dist/mapper/youdao.mjs"
-		},
-		"./mapper/tencent": {
-			"types": "./dist/mapper/tencent.d.ts",
-			"require": "./dist/mapper/tencent.js",
-			"import": "./dist/mapper/tencent.mjs"
-		},
-		"./mapper/google": {
-			"types": "./dist/mapper/iso639-1.d.ts",
-			"require": "./dist/mapper/iso639-1.js",
-			"import": "./dist/mapper/iso639-1.mjs"
-		},
-		"./mapper/iso639-1": {
-			"types": "./dist/mapper/iso639-1.d.ts",
-			"require": "./dist/mapper/iso639-1.js",
-			"import": "./dist/mapper/iso639-1.mjs"
-		},
-		"./mapper/iso639-2": {
-			"types": "./dist/mapper/iso639-2.d.ts",
-			"require": "./dist/mapper/iso639-2.js",
-			"import": "./dist/mapper/iso639-2.mjs"
-		},
-		"./mapper/iso639-3": {
-			"types": "./dist/mapper/iso639-3.d.ts",
-			"require": "./dist/mapper/iso639-3.js",
-			"import": "./dist/mapper/iso639-3.mjs"
-		}
-	},
-	"scripts": {
-		"build": "tsup",
-		"changeset": "changeset",
-		"release": "changeset version && changeset publish"
-	},
-	"packageManager": "pnpm@9.0.0",
-	"devDependencies": {
-		"@changesets/cli": "^2.27.11",
-		"tsup": "^8.3.5",
-		"typescript": "^5.7.2"
-	}
+  "name": "bcp47-language-tags",
+  "version": "1.1.0",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "description": "list BCP 47 language tags and types",
+  "homepage": "https://github.com/zhangfisher/bcp47-language-tags",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangfisher/bcp47-language-tags"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "bcp47",
+    "internationalization",
+    "i18n",
+    "language",
+    "locale"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/zh.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    },
+    "./en": {
+      "types": "./dist/en.d.ts",
+      "require": "./dist/en.js",
+      "import": "./dist/en.mjs"
+    },
+    "./zh": {
+      "types": "./dist/zh.d.ts",
+      "require": "./dist/zh.js",
+      "import": "./dist/zh.mjs"
+    },
+    "./de": {
+      "types": "./dist/de.d.ts",
+      "require": "./dist/de.js",
+      "import": "./dist/de.mjs"
+    },
+    "./fr": {
+      "types": "./dist/fr.d.ts",
+      "require": "./dist/fr.js",
+      "import": "./dist/fr.mjs"
+    },
+    "./it": {
+      "types": "./dist/it.d.ts",
+      "require": "./dist/it.js",
+      "import": "./dist/it.mjs"
+    },
+    "./jp": {
+      "types": "./dist/jp.d.ts",
+      "require": "./dist/jp.js",
+      "import": "./dist/jp.mjs"
+    },
+    "./ko": {
+      "types": "./dist/ko.d.ts",
+      "require": "./dist/ko.js",
+      "import": "./dist/ko.mjs"
+    },
+    "./ru": {
+      "types": "./dist/ru.d.ts",
+      "require": "./dist/ru.js",
+      "import": "./dist/ru.mjs"
+    },
+    "./es": {
+      "types": "./dist/es.d.ts",
+      "require": "./dist/es.js",
+      "import": "./dist/es.mjs"
+    },
+    "./ar": {
+      "types": "./dist/ar.d.ts",
+      "require": "./dist/ar.js",
+      "import": "./dist/ar.mjs"
+    },
+    "./pt": {
+      "types": "./dist/pt.d.ts",
+      "require": "./dist/pt.js",
+      "import": "./dist/pt.mjs"
+    },
+    "./nl": {
+      "types": "./dist/nl.d.ts",
+      "require": "./dist/nl.js",
+      "import": "./dist/nl.mjs"
+    },
+    "./mapper/baidu": {
+      "types": "./dist/mapper/baidu.d.ts",
+      "require": "./dist/mapper/baidu.js",
+      "import": "./dist/mapper/baidu.mjs"
+    },
+    "./mapper/xunfei": {
+      "types": "./dist/mapper/xunfei.d.ts",
+      "require": "./dist/mapper/xunfei.js",
+      "import": "./dist/mapper/xunfei.mjs"
+    },
+    "./mapper/youdao": {
+      "types": "./dist/mapper/youdao.d.ts",
+      "require": "./dist/mapper/youdao.js",
+      "import": "./dist/mapper/youdao.mjs"
+    },
+    "./mapper/tencent": {
+      "types": "./dist/mapper/tencent.d.ts",
+      "require": "./dist/mapper/tencent.js",
+      "import": "./dist/mapper/tencent.mjs"
+    },
+    "./mapper/google": {
+      "types": "./dist/mapper/iso639-1.d.ts",
+      "require": "./dist/mapper/iso639-1.js",
+      "import": "./dist/mapper/iso639-1.mjs"
+    },
+    "./mapper/iso639-1": {
+      "types": "./dist/mapper/iso639-1.d.ts",
+      "require": "./dist/mapper/iso639-1.js",
+      "import": "./dist/mapper/iso639-1.mjs"
+    },
+    "./mapper/iso639-2": {
+      "types": "./dist/mapper/iso639-2.d.ts",
+      "require": "./dist/mapper/iso639-2.js",
+      "import": "./dist/mapper/iso639-2.mjs"
+    },
+    "./mapper/iso639-3": {
+      "types": "./dist/mapper/iso639-3.d.ts",
+      "require": "./dist/mapper/iso639-3.js",
+      "import": "./dist/mapper/iso639-3.mjs"
+    },
+    "./flags": {
+      "types": "./dist/flags.d.ts",
+      "require": "./dist/flags.js",
+      "import": "./dist/flags.mjs"
+    },
+    "./flags/*": {
+      "import": "./dist/flags/*",
+      "require": "./dist/flags/*",
+      "default": "./dist/flags/*"
+    },
+    "./utils": {
+      "types": "./dist/utils/index.d.ts",
+      "require": "./dist/utils/index.js",
+      "import": "./dist/utils/index.mjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "changeset": "changeset",
+    "release": "bun run build && changeset version && changeset publish",
+    "only-release": "bun run build && npm publish"
+  },
+  "packageManager": "bun@1.3.11",
+  "devDependencies": {
+    "@changesets/cli": "^2.31.0",
+    "esbuild-copy-static-files": "^0.1.0",
+    "esbuild-raw-plugin": "^0.3.1",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  }
 }

@@ -22,6 +22,8 @@ export const tags = {
     "en-CB": {"tag": "en-CB", "name": "Английский (Карибский бассейн)", "nativeName": "English (Caribbean)", "primary": false},
     "en-JM": {"tag": "en-JM", "name": "Английский (Ямайка)", "nativeName": "English (Jamaica)", "primary": false},
     "en-TT": {"tag": "en-TT", "name": "Английский (Тринидад и Тобаго)", "nativeName": "English (Trinidad and Tobago)", "primary": false},
+    "en-NG": {"tag": "en-NG", "name": "Английский (Нигерия)", "nativeName": "English (Nigeria)", "primary": false},
+    "en-UG": {"tag": "en-UG", "name": "Английский (Уганда)", "nativeName": "English (Uganda)", "primary": false},
     "hi-IN": {"tag": "hi-IN", "name": "Хинди (Индия)", "nativeName": "हिन्दी (Hindi)", "primary": false},
     "es-ES": {"tag": "es-ES", "name": "Испанский (Испания)", "nativeName": "Español (España)", "primary": true },
     "es-MX": {"tag": "es-MX", "name": "Испанский (Мексика)", "nativeName": "Español (México)", "primary": false},
@@ -73,11 +75,14 @@ export const tags = {
     "fr-CH": {"tag": "fr-CH", "name": "Французский (Швейцария)", "nativeName": "Français (Suisse)", "primary": false},
     "fr-LU": {"tag": "fr-LU", "name": "Французский (Люксембург)", "nativeName": "Français (Luxembourg)", "primary": false},
     "fr-MC": {"tag": "fr-MC", "name": "Французский (Монако)", "nativeName": "Français (Monaco)", "primary": false},
+    "fr-CD": {"tag": "fr-CD", "name": "Французский (ДР Конго)", "nativeName": "Français (République démocratique du Congo)", "primary": false},
     "ko-KR": {"tag": "ko-KR", "name": "Корейский (Южная Корея)", "nativeName": "한국어 (대한민국)", "primary": true },
+    "ko-KP": {"tag": "ko-KP", "name": "Корейский (КНДР)", "nativeName": "한국어 (조선민주주인민공화국)", "primary": false },
     "it-IT": {"tag": "it-IT", "name": "Итальянский (Италия)", "nativeName": "Italiano (Italia)", "primary": true },
     "it-CH": {"tag": "it-CH", "name": "Итальянский (Швейцария)", "nativeName": "Italiano (Svizzera)", "primary": false},
     "nl-NL": {"tag": "nl-NL", "name": "Нидерландский (Нидерланды)", "nativeName": "Nederlands (Nederland)", "primary": true},
     "nl-BE": {"tag": "nl-BE", "name": "Нидерландский (Бельгия)", "nativeName": "Nederlands (België)", "primary": false},
+    "bn-BD": {"tag": "bn-BD", "name": "Бенгальский (Бангладеш)", "nativeName": "বাংলা (বাংলাদেশ)", "primary": false},
     "pl-PL": {"tag": "pl-PL", "name": "Польский (Польша)", "nativeName": "Polski (Polska)", "primary": false},
     "vi-VN": {"tag": "vi-VN", "name": "Вьетнамский (Вьетнам)", "nativeName": "Tiếng Việt (Việt Nam)", "primary": false},
     "tr-TR": {"tag": "tr-TR", "name": "Турецкий (Турция)", "nativeName": "Türkçe (Türkiye)", "primary": false},
@@ -125,7 +130,9 @@ export const tags = {
     "fa-IR": {"tag": "fa-IR", "name": "Персидский (Иран)", "nativeName": "فارسی (ایران)", "primary": false},
     "syr-SY": {"tag": "syr-SY", "name": "Сирийский (Сирия)", "nativeName": "ܣܘܪܝܝܐ (ܣܘܪܝܐ)", "primary": false},
     "div-MV": {"tag": "div-MV", "name": "Дивехи (Мальдивы)", "nativeName": "ދިވެހި (މޯލްޑިވްސް)", "primary": false},
-    "ka-GE": {"tag": "ka-GE", "name": "Грузинский (Грузия)", "nativeName": "ქართული (საქართველო)", "primary": false},      
+    "ka-GE": {"tag": "ka-GE", "name": "Грузинский (Грузия)", "nativeName": "ქართული (საქართველო)", "primary": false},
+    "am-ET": {"tag": "am-ET", "name": "Амхарский (Эфиопия)", "nativeName": "አማርኛ (ኢትዮጵያ)", "primary": false},
+    "my-MM": {"tag": "my-MM", "name": "Бирманский (Мьянма)", "nativeName": "မြန်မာ (မြန်မာ)", "primary": false }
 }  
 
 const { getTag, getTags, getPrimaryTags } = createTagUtils(tags)

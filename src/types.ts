@@ -15,8 +15,8 @@ export type BCP47LanguageTagName =
   | "ar-TN" | "ar-LY" | "ar-JO" | "ar-LB" | "ar-KW" | "ar-AE" | "ar-BH" | "ar-QA" | "ar-OM" | "pt-BR"
   // 葡萄牙语(葡萄牙) | 俄语(俄罗斯) | 日语(日本) | 德语(德国) | 德语(奥地利) | 德语(瑞士) | 法语(法国) | 法语(加拿大) | 法语(比利时) | 法语(瑞士)
   | "pt-PT" | "ru-RU" | "ja-JP" | "de-DE" | "de-AT" | "de-CH" | "fr-FR" | "fr-CA" | "fr-BE" | "fr-CH"
-  // 法语(卢森堡) | 法语(摩纳哥) | 韩语(韩国) | 意大利语(意大利) | 意大利语(瑞士) | 土耳其语 | 泰语 | 希腊语 | 捷克语 | 瑞典语
-  | "fr-LU" | "fr-MC" | "ko-KR" | "it-IT" | "it-CH" | "tr-TR" | "th-TH" | "el-GR" | "cs-CZ" | "sv-SE"
+  // 法语(卢森堡) | 法语(摩纳哥) | 韩语(韩国) | 韩语(朝鲜) | 意大利语(意大利) | 意大利语(瑞士) | 土耳其语 | 泰语 | 希腊语 | 捷克语 | 瑞典语
+  | "fr-LU" | "fr-MC" | "ko-KR" | "ko-KP" | "it-IT" | "it-CH" | "tr-TR" | "th-TH" | "el-GR" | "cs-CZ" | "sv-SE"
   // 瑞典语(芬兰) | 匈牙利语 | 芬兰语 | 丹麦语 | 挪威博克马尔语 | 挪威尼诺斯克语 | 希伯来语 | 印度尼西亚语 | 马来语(马来西亚) | 马来语(文莱)
   | "sv-FI" | "hu-HU" | "fi-FI" | "da-DK" | "nb-NO" | "nn-NO" | "he-IL" | "id-ID" | "ms-MY" | "ms-BN"
   // 罗马尼亚语 | 保加利亚语 | 乌克兰语 | 斯洛伐克语 | 斯洛文尼亚语 | 克罗地亚语 | 加泰罗尼亚语 | 立陶宛语 | 拉脱维亚语 | 爱沙尼亚语
@@ -25,8 +25,8 @@ export type BCP47LanguageTagName =
   | "sq-AL" | "mk-MK" | "be-BY" | "is-IS" | "gl-ES" | "eu-ES" | "af-ZA" | "sw-KE" | "ta-IN" | "te-IN"
   // 卡纳达语 | 马拉地语 | 古吉拉特语 | 旁遮普语 | 孔卡尼语 | 梵语 | 乌尔都语 | 波斯语 | 叙利亚语 | 迪维希语
   | "kn-IN" | "mr-IN" | "gu-IN" | "pa-IN" | "kok-IN" | "sa-IN" | "ur-PK" | "fa-IR" | "syr-SY" | "div-MV"
-  // 格鲁吉亚语
-  | "ka-GE";
+  // 格鲁吉亚语 | 荷兰语(荷兰) | 波兰语 | 越南语 | 孟加拉语(孟加拉国) | 英语(尼日利亚) | 阿姆哈拉语(埃塞俄比亚) | 缅甸语 | 英语(乌干达) | 法语(刚果民主共和国)
+  | "ka-GE" | "nl-NL" | "pl-PL" | "vi-VN" | "bn-BD" | "en-NG" | "am-ET" | "my-MM" | "en-UG" | "fr-CD";
 
 
 export type BCP47LanguageTag = {
@@ -52,4 +52,6 @@ export type PrimaryLanguageTags =
   | "pt-PT" 
   | "nl-NL" 
 
-export type PrimaryLanguageTages = Record<PrimaryLanguageTags,BCP47LanguageTags>
+export type PrimaryLanguageTages = {
+  [K in PrimaryLanguageTags]: Record<string, BCP47LanguageTag>
+}

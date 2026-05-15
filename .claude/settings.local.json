@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(code --list-extensions)",
+      "Bash(node rename-flags.js)",
+      "Bash(node generate-unmap.js)",
+      "Bash(node batch-update.js)",
+      "Bash(node final-update.js)",
+      "Bash(node update-remaining.js)"
+    ]
+  }
+}
