@@ -1,6 +1,8 @@
 name: Publish Package
 on:
   push:
+    branches:
+      - "master"       
     tags:
       - "release-*"
   # 允许你从 Actions 选项卡手动运行此工作流程
@@ -46,7 +48,7 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: bun run only-release
+          publish: ${{ startsWith(github.ref_name, 'release-') && 'bun run only-release' || 'bun run release' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           npm_config_registry: https://registry.npmjs.org
