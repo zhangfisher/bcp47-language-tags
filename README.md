@@ -65,23 +65,33 @@ for (let tag of tags) {
 **Supported Languages:**
 
 ```typescript
-import { tags } from 'bcp47-language-tags/zh'   // Chinese
-import { tags } from 'bcp47-language-tags/de'   // German
-import { tags } from 'bcp47-language-tags/en'   // English
-import { tags } from 'bcp47-language-tags/es'   // Spanish
-import { tags } from 'bcp47-language-tags/fr'   // French
-import { tags } from 'bcp47-language-tags/it'   // Italian
-import { tags } from 'bcp47-language-tags/jp'   // Japanese
-import { tags } from 'bcp47-language-tags/ko'   // Korean
-import { tags } from 'bcp47-language-tags/ru'   // Russian
-import { tags } from 'bcp47-language-tags/ar'   // Arabic
-import { tags } from 'bcp47-language-tags/pt'   // Portuguese
-import { tags } from 'bcp47-language-tags/nl'   // Dutch
+import { tags } from "bcp47-language-tags/zh"   // Chinese
+import { tags } from "bcp47-language-tags/en"   // English
+import { tags } from "bcp47-language-tags/ar"   // Arabic
+import { tags } from "bcp47-language-tags/cs"   // Czech
+import { tags } from "bcp47-language-tags/da"   // Danish
+import { tags } from "bcp47-language-tags/de"   // German
+import { tags } from "bcp47-language-tags/el"   // Greek
+import { tags } from "bcp47-language-tags/es"   // Spanish
+import { tags } from "bcp47-language-tags/fi"   // Finnish
+import { tags } from "bcp47-language-tags/fr"   // French
+import { tags } from "bcp47-language-tags/hi"   // Hindi
+import { tags } from "bcp47-language-tags/it"   // Italian
+import { tags } from "bcp47-language-tags/jp"   // Japanese
+import { tags } from "bcp47-language-tags/ko"   // Korean
+import { tags } from "bcp47-language-tags/nl"   // Dutch
+import { tags } from "bcp47-language-tags/pl"   // Polish
+import { tags } from "bcp47-language-tags/pt"   // Portuguese
+import { tags } from "bcp47-language-tags/ru"   // Russian
+import { tags } from "bcp47-language-tags/sv"   // Swedish
+import { tags } from "bcp47-language-tags/th"   // Thai
+import { tags } from "bcp47-language-tags/tr"   // Turkish
+import { tags } from "bcp47-language-tags/vi"   // Vietnamese
 ```
 
 ### Primary Languages
 
-This library defines **12 of the most common languages** as Primary Languages. Each primary language has multiple regional variants, with one variant marked as `primary: true` to represent the default/most commonly used variant for that language.
+This library defines **22 of the most common languages** as Primary Languages. Each primary language has multiple regional variants, with one variant marked as `primary: true` to represent the default/most commonly used variant for that language.
 
 **List of Primary Languages:**
 

@@ -88,6 +88,56 @@
       "require": "./dist/nl.js",
       "import": "./dist/nl.mjs"
     },
+    "./cs": {
+      "types": "./dist/cs.d.ts",
+      "require": "./dist/cs.js",
+      "import": "./dist/cs.mjs"
+    },
+    "./da": {
+      "types": "./dist/da.d.ts",
+      "require": "./dist/da.js",
+      "import": "./dist/da.mjs"
+    }, 
+    "./fi": {
+      "types": "./dist/fi.d.ts",
+      "require": "./dist/fi.js",
+      "import": "./dist/fi.mjs"
+    },
+    "./hi": {
+      "types": "./dist/hi.d.ts",
+      "require": "./dist/hi.js",
+      "import": "./dist/hi.mjs"
+    },
+    "./pl": {
+      "types": "./dist/pl.d.ts",
+      "require": "./dist/pl.js",
+      "import": "./dist/pl.mjs"
+    },
+    "./sv": {
+      "types": "./dist/sv.d.ts",
+      "require": "./dist/sv.js",
+      "import": "./dist/sv.mjs"
+    },
+    "./th": {
+      "types": "./dist/th.d.ts",
+      "require": "./dist/th.js",
+      "import": "./dist/th.mjs"
+    },
+    "./tr": {
+      "types": "./dist/tr.d.ts",
+      "require": "./dist/tr.js",
+      "import": "./dist/tr.mjs"
+    },
+    "./vi": {
+      "types": "./dist/vi.d.ts",
+      "require": "./dist/vi.js",
+      "import": "./dist/vi.mjs"
+    },
+    "./el": {
+      "types": "./dist/el.d.ts",
+      "require": "./dist/el.js",
+      "import": "./dist/el.mjs"
+    },
     "./mapper/baidu": {
       "types": "./dist/mapper/baidu.d.ts",
       "require": "./dist/mapper/baidu.js",

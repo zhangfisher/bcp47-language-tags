@@ -10,13 +10,13 @@ export const tags = {
   "zh-TW": {
     tag: "zh-TW",
     name: "Tradiční čínština (Tchaj-wan)",
-    nativeName: "繁體中文(臺灣)",
+    nativeName: "繁體中文(中國臺灣)",
     primary: false,
   },
   "zh-HK": {
     tag: "zh-HK",
     name: "Tradiční čínština (Hongkong)",
-    nativeName: "繁體中文(香港),",
+    nativeName: "繁體中文(中國香港)",
     primary: false,
   },
   "zh-SG": {
@@ -28,7 +28,7 @@ export const tags = {
   "zh-MO": {
     tag: "zh-MO",
     name: "Tradiční čínština (Macao)",
-    nativeName: "繁體中文(澳門)",
+    nativeName: "繁體中文(中國澳门)",
     primary: false,
   },
   "zh-CHS": {
@@ -149,7 +149,7 @@ export const tags = {
     tag: "es-ES",
     name: "Španělština (Španělsko)",
     nativeName: "Español (España)",
-    primary: true,
+    primary: false,
   },
   "es-MX": {
     tag: "es-MX",

@@ -10,13 +10,13 @@ export const tags = {
   "zh-TW": {
     tag: "zh-TW",
     name: "Tiếng Trung phồn thể (Đài Loan)",
-    nativeName: "繁體中文(臺灣)",
+    nativeName: "繁體中文(中國臺灣)",
     primary: false,
   },
   "zh-HK": {
     tag: "zh-HK",
     name: "Tiếng Trung phồn thể (Hồng Kông)",
-    nativeName: "繁體中文(香港),",
+    nativeName: "繁體中文(中國香港),",
     primary: false,
   },
   "zh-SG": {
@@ -28,7 +28,7 @@ export const tags = {
   "zh-MO": {
     tag: "zh-MO",
     name: "Tiếng Trung phồn thể (Macau)",
-    nativeName: "繁體中文(澳門)",
+    nativeName: "繁體中文(中國澳門)",
     primary: false,
   },
   "zh-CHS": {

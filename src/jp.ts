@@ -10,25 +10,25 @@ export const tags = {
   "zh-TW": {
     tag: "zh-TW",
     name: "中国語（繁体字 - 台湾）",
-    nativeName: "繁體中文(臺灣)",
+    nativeName: "繁體中文(中國臺灣)",
     primary: false,
   },
   "zh-HK": {
     tag: "zh-HK",
     name: "中国語（繁体字 - 香港）",
-    nativeName: "繁體中文(香港)",
+    nativeName: "繁體中文(中國香港)",
     primary: false,
   },
   "zh-MO": {
     tag: "zh-MO",
     name: "中国語（繁体字 - マカオ）",
-    nativeName: "繁體中文(Traditional Chinese - Macau)",
+    nativeName: "繁體中文(中國澳門)",
     primary: false,
   },
   "zh-SG": {
     tag: "zh-SG",
     name: "中国語（簡体字 - シンガポール）",
-    nativeName: "简体中文(Simplified Chinese - Singapore)",
+    nativeName: "简体中文(新加坡)",
     primary: false,
   },
   "zh-CHS": {

@@ -30,6 +30,42 @@ pnpm add bcp47-language-tags
 
 ## 使用方法
 
+### 按需导入优化
+
+本库支持**按需导入**，可以有效减小打包体积：
+
+#### ✅ 推荐：按需导入（Tree-shaking 友好）
+
+```typescript
+// 只导入需要的语言模块
+import { tags } from 'bcp47-language-tags/zh';        // 仅中文
+import { tags } from 'bcp47-language-tags/en';        // 仅英文
+import { getTag, getTags } from 'bcp47-language-tags/en';  // 仅导入特定函数
+
+// 只导入国旗资源
+import flags from 'bcp47-language-tags/flags';        // 主要语言国旗
+import zhCN from 'bcp47-language-tags/flags/zh-CN.svg';  // 单个国旗
+
+// 只导入映射器
+import { baidu, ISO6391 } from 'bcp47-language-tags/mapper';
+```
+
+**优势：**
+- 🎯 **精确加载** - 只加载实际使用的语言和模块
+- 📦 **更小体积** - 未使用的代码会被 Tree-shaking 移除
+- ⚡ **更快启动** - 减少初始加载时间
+
+#### ❌ 不推荐：全量导入
+
+```typescript
+// 避免：会导入所有语言和模块
+import allTags from 'bcp47-language-tags';  // 包含所有 22 种语言的完整数据
+```
+
+**注意：** 除非你确实需要所有语言的数据，否则建议使用按需导入。
+
+---
+
 ### 语言标签列表
 
 导入带有本地化名称的语言标签：
@@ -42,7 +78,7 @@ for (let tag of tags) {
 }
 // 输出：
 //   {"tag": "zh-CN", "name": "Chinese (Simplified)", "nativeName": "简体中文", "primary": true}
-//   {"tag": "zh-TW", "name": "Chinese (Traditional - Taiwan)", "nativeName": "繁體中文 (臺灣)"}
+//   {"tag": "zh-TW", "name": "Chinese (Traditional - Taiwan)", "nativeName": "繁體中文 (中国臺灣)"}
 //   {"tag": "en-US", "name": "English (United States)", "nativeName": "English (United States)", "primary": true}
 //   {"tag": "es-ES", "name": "Spanish (Spain)", "nativeName": "Español (España)", "primary": true}
 //   ...
@@ -65,23 +101,33 @@ for (let tag of tags) {
 **支持的语言：**
 
 ```typescript
-import { tags } from 'bcp47-language-tags/zh'   // 中文
-import { tags } from 'bcp47-language-tags/de'   // 德语
-import { tags } from 'bcp47-language-tags/en'   // 英语
-import { tags } from 'bcp47-language-tags/es'   // 西班牙语
-import { tags } from 'bcp47-language-tags/fr'   // 法语
-import { tags } from 'bcp47-language-tags/it'   // 意大利语
-import { tags } from 'bcp47-language-tags/jp'   // 日语
-import { tags } from 'bcp47-language-tags/ko'   // 韩语
-import { tags } from 'bcp47-language-tags/ru'   // 俄语
-import { tags } from 'bcp47-language-tags/ar'   // 阿拉伯语
-import { tags } from 'bcp47-language-tags/pt'   // 葡萄牙语
-import { tags } from 'bcp47-language-tags/nl'   // 荷兰语
+import { tags } from "bcp47-language-tags/zh"   // 中文
+import { tags } from "bcp47-language-tags/en"   // 美国英语
+import { tags } from "bcp47-language-tags/ar"   // 阿拉伯语
+import { tags } from "bcp47-language-tags/cs"   // 捷克语
+import { tags } from "bcp47-language-tags/da"   // 丹麦语
+import { tags } from "bcp47-language-tags/de"   // 德语
+import { tags } from "bcp47-language-tags/el"   // 希腊语
+import { tags } from "bcp47-language-tags/es"   // 西班牙语
+import { tags } from "bcp47-language-tags/fi"   // 芬兰语
+import { tags } from "bcp47-language-tags/fr"   // 法语
+import { tags } from "bcp47-language-tags/hi"   // 印地语
+import { tags } from "bcp47-language-tags/it"   // 意大利语
+import { tags } from "bcp47-language-tags/vi"   // 越南语 
+import { tags } from "bcp47-language-tags/jp"   // 日语
+import { tags } from "bcp47-language-tags/ko"   // 韩语
+import { tags } from "bcp47-language-tags/nl"   // 荷兰语
+import { tags } from "bcp47-language-tags/pl"   // 波兰语
+import { tags } from "bcp47-language-tags/pt"   // 葡萄牙语
+import { tags } from "bcp47-language-tags/ru"   // 俄语
+import { tags } from "bcp47-language-tags/sv"   // 瑞典语
+import { tags } from "bcp47-language-tags/th"   // 泰语
+import { tags } from "bcp47-language-tags/tr"   // 土耳其语
 ```
 
 ### 主要语言（Primary Languages）
 
-本项目定义了 **12 种最常见的语言** 作为主要语言。每种主要语言有多个地区变体（Regional Variants），其中有一个变体被标记为 `primary: true`，代表该语言的默认/最常用变体。
+本项目定义了 **22 种最常见的语言** 作为主要语言。每种主要语言有多个地区变体（Regional Variants），其中有一个变体被标记为 `primary: true`，代表该语言的默认/最常用变体。
 
 **主要语言列表：**
 
@@ -98,7 +144,18 @@ import { tags } from 'bcp47-language-tags/nl'   // 荷兰语
 | 意大利语 | `it-IT` | 意大利语（意大利） |
 | 阿拉伯语 | `ar-EG` | 阿拉伯语（埃及） |
 | 葡萄牙语 | `pt-PT` | 葡萄牙语（葡萄牙） |
-| 荷兰语 | `nl-NL` | 荷兰语（荷兰） |
+| 荷兰语 | `nl-NL` | 荷兰语（荷兰） |     
+| 捷克语 |      `cs-CZ`  | |
+| 丹麦语 |      `da-DK`  | |
+| 芬兰语 |      `fi-FI`  | |
+| 印地语 |      `hi-IN`  | |
+| 波兰语 |      `pl-PL`  | |
+| 瑞典语 |      `sv-SE`  | |
+| 泰语 |      `th-TH`  | |
+| 土耳其语 |      `tr-TR`  | |
+| 越南语 |      `vi-VN`  | |
+| 希腊语 |      `el-GR`  | |
+
 
 **地区变体示例（以中文为例）：**
 
