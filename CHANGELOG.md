@@ -1,5 +1,11 @@
 # bcp47-language-tags
 
+## 1.2.0
+
+### Minor Changes
+
+- d3f8100: add flags
+
 ## 1.1.0
 
 ### Minor Changes
