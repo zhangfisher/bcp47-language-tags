@@ -1,9 +1,8 @@
 name: Publish Package
 on:
   push:
-    branches:
-      - "master"
-      - "!release-*"
+    tags:
+      - "release-*"
   # 允许你从 Actions 选项卡手动运行此工作流程
   # Allows you to run this workflow manually from the Actions tab
   workflow_run:
@@ -47,7 +46,7 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: bun run release
+          publish: bun run only-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           npm_config_registry: https://registry.npmjs.org
