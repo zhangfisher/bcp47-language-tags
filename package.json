@@ -1,6 +1,6 @@
 {
   "name": "bcp47-language-tags",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -97,7 +97,7 @@
       "types": "./dist/da.d.ts",
       "require": "./dist/da.js",
       "import": "./dist/da.mjs"
-    }, 
+    },
     "./fi": {
       "types": "./dist/fi.d.ts",
       "require": "./dist/fi.js",
