@@ -6,7 +6,10 @@
       "Bash(node generate-unmap.js)",
       "Bash(node batch-update.js)",
       "Bash(node final-update.js)",
-      "Bash(node update-remaining.js)"
+      "Bash(node update-remaining.js)",
+      "Bash(node scripts/split-tags.js)",
+      "Bash(bun scripts/split-tags.ts)",
+      "Bash(grep \"^[a-z][a-z].ts$\")"
     ]
   }
 }

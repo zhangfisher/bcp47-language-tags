@@ -1,0 +1,2 @@
+import type { BCP47LanguageTag } from "../../types"
+export const saIN: BCP47LanguageTag = {"tag":"sa-IN","name":"Санскрит (Индия)","nativeName":"संस्कृत (भारत)"};

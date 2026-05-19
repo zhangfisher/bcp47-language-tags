@@ -2,31 +2,31 @@ import { defineConfig, Options } from "tsup";
 import { raw } from "esbuild-raw-plugin";
 // @ts-ignore
 import copy from "esbuild-copy-static-files";
- 
+
 const languages = [
-"ar",
-"cs",
-"da",
-"de",
-"el",
-"en",
-"es",
-"fi",
-"fr",
-"hi",
-"it",
-"jp",
-"ko",
-"nl",
-"pl",
-"pt",
-"ru",
-"sv",
-"th",
-"tr",
-"vi",
-"zh",
-]
+  "zh-CN", //  简体中文
+  "en-US", //  美国英语
+  "ja-JP", //  日语
+  "ko-KR", //  韩语
+  "ru-RU", //  俄语
+  "es-ES", //  西班牙语
+  "fr-FR", //  法语
+  "de-DE", //  德语
+  "it-IT", //  意大利语
+  "ar-EG", //  阿拉伯语
+  "pt-PT", //  葡萄牙语
+  "nl-NL", //  荷兰语
+  "cs-CZ", //  捷克语
+  "da-DK", //  丹麦语
+  "fi-FI", //  芬兰语
+  "hi-IN", //  印地语
+  "pl-PL", //  波兰语
+  "sv-SE", //  瑞典语
+  "th-TH", //  泰语
+  "tr-TR", //  土耳其语
+  "vi-VN", //  越南语
+  "el-GR", //  希腊语
+];
 
 const mapTo = [
   "baidu",
@@ -37,7 +37,6 @@ const mapTo = [
   "iso639-2",
   "iso639-3",
 ];
- 
 
 export default defineConfig([
   {
@@ -47,7 +46,7 @@ export default defineConfig([
     dts: true,
     clean: true,
     cjsInterop: true,
-    format: ["cjs", "esm"]
+    format: ["cjs", "esm"],
   },
   {
     entry: ["src/flags.ts"],
@@ -79,8 +78,8 @@ export default defineConfig([
   },
   ...languages.map((lng) => {
     return {
-      entry: [`src/${lng}.ts`],
-      outDir: "dist",
+      entry: [`src/tags/${lng}/*.ts`],
+      outDir: `dist/${lng}`,
       minify: true,
       dts: true,
       cjsInterop: true,

@@ -1,0 +1,2 @@
+import type { BCP47LanguageTag } from "../../types"
+export const enIE: BCP47LanguageTag = {"tag":"en-IE","name":"अंग्रेज़ी (आयरलैंड)","nativeName":"English (Ireland)"};

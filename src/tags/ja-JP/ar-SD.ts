@@ -1,0 +1,2 @@
+import type { BCP47LanguageTag } from "../../types"
+export const arSD: BCP47LanguageTag = {"tag":"ar-SD","name":"アラビア語（スーダン）","nativeName":"العربية (السودان)"};
