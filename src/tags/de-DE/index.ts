@@ -1,4 +1,5 @@
 import { createTagUtils } from "../../utils/createTagUtils";
+import { PrimaryLanguageTagList } from "../../types";
 
 import { arEG } from "./ar-EG";
 import { deDE } from "./de-DE";
@@ -12,10 +13,22 @@ import { ruRU } from "./ru-RU";
 import { zhCN } from "./zh-CN";
 import { zhTW } from "./zh-TW";
 
-const tags = [arEG, deDE, enUS, esES, frFR, itIT, jaJP, koKR, ruRU, zhCN, zhTW];
+export const tags = [
+  arEG,
+  deDE,
+  enUS,
+  esES,
+  frFR,
+  itIT,
+  jaJP,
+  koKR,
+  ruRU,
+  zhCN,
+  zhTW,
+] as PrimaryLanguageTagList;
 
-const { getTag, getTags } = createTagUtils(tags);
+const { getTag, getTags, addTag, deleteTag } = createTagUtils(tags);
 
-export { getTag, getTags };
-export { tags };
+export { getTag, getTags, addTag, deleteTag };
+
 export * from "../../types";

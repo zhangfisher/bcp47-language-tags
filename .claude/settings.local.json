@@ -9,7 +9,9 @@
       "Bash(node update-remaining.js)",
       "Bash(node scripts/split-tags.js)",
       "Bash(bun scripts/split-tags.ts)",
-      "Bash(grep \"^[a-z][a-z].ts$\")"
+      "Bash(grep \"^[a-z][a-z].ts$\")",
+      "Bash(cd \"C:\\\\Work\\\\Code\\\\bcp47-language-tags\\\\src\\\\tags\" && for dir in */; do sed -i 's/export { getTag, getTags };/const { getTag, getTags, addTag, deleteTag } = createTagUtils\\(tags\\);\\\\n\\\\nexport { getTag, getTags, addTag, deleteTag };/' \"$dir/index.ts\"; done)",
+      "Bash(node -e ' *)"
     ]
   }
 }

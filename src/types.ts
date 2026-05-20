@@ -135,8 +135,8 @@ export type BCP47LanguageTagName =
   | "fr-CD"; // 法语(刚果民主共和国)
 
 // BCP47 语言标签类型，定义单个语言标签的结构
-export type BCP47LanguageTag = {
-  tag: string;
+export type BCP47LanguageTag<T = string> = {
+  tag: T;
   name: string;
   nativeName: string;
 };
@@ -144,20 +144,25 @@ export type BCP47LanguageTag = {
 // BCP47 语言标签集合类型，以标签名称为键的记录
 export type BCP47LanguageTags = BCP47LanguageTag[];
 
-// 主要语言标签类型，定义常用的主要语言
-export type PrimaryLanguage =
-  | "zh-CN" //  简体中文
-  | "zh-TW" //  繁体中文
-  | "en-US" //  美国英语
-  | "ru-RU" //  俄语
-  | "es-ES" //  西班牙语
-  | "fr-FR" //  法语
-  | "de-DE" //  德语
-  | "it-IT" //  意大利语
-  | "ar-EG" //  阿拉伯语(埃及)
-  | "ja-JP" //  日语
-  | "ko-KR"; //  韩语
-
 // 主要语言标签集合类型，按主要语言分组的语言标签记录
-export interface PrimaryLanguageTags
-  extends Record<PrimaryLanguage, BCP47LanguageTag> {}
+export interface PrimaryLanguageTags {
+  "zh-CN": BCP47LanguageTag; //  简体中文
+  "zh-TW": BCP47LanguageTag; //  繁体中文
+  "en-US": BCP47LanguageTag; //  美国英语
+  "ru-RU": BCP47LanguageTag; //  俄语
+  "es-ES": BCP47LanguageTag; //  西班牙语
+  "fr-FR": BCP47LanguageTag; //  法语
+  "de-DE": BCP47LanguageTag; //  德语
+  "it-IT": BCP47LanguageTag; //  意大利语
+  "ar-EG": BCP47LanguageTag; //  阿拉伯语(埃及)
+  "ja-JP": BCP47LanguageTag; //  日语
+  "ko-KR": BCP47LanguageTag; //  韩语
+}
+
+// 主要语言标签类型，定义常用的主要语言
+export type PrimaryLanguage = keyof PrimaryLanguageTags;
+
+export type PrimaryLanguageTagList = BCP47LanguageTag<PrimaryLanguage>[];
+
+//简体中文,繁体中文,美国英语,俄语,西班牙语,法语,德语,意大利语,阿拉伯语(埃及),日语,韩语
+// zh-CN, zh-TW, en-US, ru-RU, es-ES, fr-FR, de-DE, it-IT, ar-EG, ja-JP, ko-KR,

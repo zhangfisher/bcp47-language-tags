@@ -24,159 +24,234 @@
   ],
   "exports": {
     ".": {
-      "types": "./dist/zh.d.ts",
+      "type": "./dist/index.d.ts",
       "require": "./dist/index.js",
       "import": "./dist/index.mjs"
     },
-    "./en": {
-      "types": "./dist/en.d.ts",
-      "require": "./dist/en.js",
-      "import": "./dist/en.mjs"
+    "./zh-CN": {
+      "type": "./dist/zh-CN/index.d.ts",
+      "require": "./dist/zh-CN/index.js",
+      "import": "./dist/zh-CN/index.mjs"
     },
-    "./zh": {
-      "types": "./dist/zh.d.ts",
-      "require": "./dist/zh.js",
-      "import": "./dist/zh.mjs"
+    "./zh-CN/*": {
+      "type": "./dist/zh-CN/*.d.ts",
+      "require": "./dist/zh-CN/*.js",
+      "import": "./dist/zh-CN/*.mjs"
     },
-    "./de": {
-      "types": "./dist/de.d.ts",
-      "require": "./dist/de.js",
-      "import": "./dist/de.mjs"
+    "./en-US": {
+      "type": "./dist/en-US/index.d.ts",
+      "require": "./dist/en-US/index.js",
+      "import": "./dist/en-US/index.mjs"
     },
-    "./fr": {
-      "types": "./dist/fr.d.ts",
-      "require": "./dist/fr.js",
-      "import": "./dist/fr.mjs"
+    "./en-US/*": {
+      "type": "./dist/en-US/*.d.ts",
+      "require": "./dist/en-US/*.js",
+      "import": "./dist/en-US/*.mjs"
     },
-    "./it": {
-      "types": "./dist/it.d.ts",
-      "require": "./dist/it.js",
-      "import": "./dist/it.mjs"
+    "./ar-EG": {
+      "type": "./dist/ar-EG/index.d.ts",
+      "require": "./dist/ar-EG/index.js",
+      "import": "./dist/ar-EG/index.mjs"
     },
-    "./jp": {
-      "types": "./dist/jp.d.ts",
-      "require": "./dist/jp.js",
-      "import": "./dist/jp.mjs"
+    "./ar-EG/*": {
+      "type": "./dist/ar-EG/*.d.ts",
+      "require": "./dist/ar-EG/*.js",
+      "import": "./dist/ar-EG/*.mjs"
     },
-    "./ko": {
-      "types": "./dist/ko.d.ts",
-      "require": "./dist/ko.js",
-      "import": "./dist/ko.mjs"
+    "./cs-CZ": {
+      "type": "./dist/cs-CZ/index.d.ts",
+      "require": "./dist/cs-CZ/index.js",
+      "import": "./dist/cs-CZ/index.mjs"
     },
-    "./ru": {
-      "types": "./dist/ru.d.ts",
-      "require": "./dist/ru.js",
-      "import": "./dist/ru.mjs"
+    "./cs-CZ/*": {
+      "type": "./dist/cs-CZ/*.d.ts",
+      "require": "./dist/cs-CZ/*.js",
+      "import": "./dist/cs-CZ/*.mjs"
     },
-    "./es": {
-      "types": "./dist/es.d.ts",
-      "require": "./dist/es.js",
-      "import": "./dist/es.mjs"
+    "./da-DK": {
+      "type": "./dist/da-DK/index.d.ts",
+      "require": "./dist/da-DK/index.js",
+      "import": "./dist/da-DK/index.mjs"
     },
-    "./ar": {
-      "types": "./dist/ar.d.ts",
-      "require": "./dist/ar.js",
-      "import": "./dist/ar.mjs"
+    "./da-DK/*": {
+      "type": "./dist/da-DK/*.d.ts",
+      "require": "./dist/da-DK/*.js",
+      "import": "./dist/da-DK/*.mjs"
     },
-    "./pt": {
-      "types": "./dist/pt.d.ts",
-      "require": "./dist/pt.js",
-      "import": "./dist/pt.mjs"
+    "./de-DE": {
+      "type": "./dist/de-DE/index.d.ts",
+      "require": "./dist/de-DE/index.js",
+      "import": "./dist/de-DE/index.mjs"
     },
-    "./nl": {
-      "types": "./dist/nl.d.ts",
-      "require": "./dist/nl.js",
-      "import": "./dist/nl.mjs"
+    "./de-DE/*": {
+      "type": "./dist/de-DE/*.d.ts",
+      "require": "./dist/de-DE/*.js",
+      "import": "./dist/de-DE/*.mjs"
     },
-    "./cs": {
-      "types": "./dist/cs.d.ts",
-      "require": "./dist/cs.js",
-      "import": "./dist/cs.mjs"
+    "./el-GR": {
+      "type": "./dist/el-GR/index.d.ts",
+      "require": "./dist/el-GR/index.js",
+      "import": "./dist/el-GR/index.mjs"
     },
-    "./da": {
-      "types": "./dist/da.d.ts",
-      "require": "./dist/da.js",
-      "import": "./dist/da.mjs"
+    "./el-GR/*": {
+      "type": "./dist/el-GR/*.d.ts",
+      "require": "./dist/el-GR/*.js",
+      "import": "./dist/el-GR/*.mjs"
     },
-    "./fi": {
-      "types": "./dist/fi.d.ts",
-      "require": "./dist/fi.js",
-      "import": "./dist/fi.mjs"
+    "./es-ES": {
+      "type": "./dist/es-ES/index.d.ts",
+      "require": "./dist/es-ES/index.js",
+      "import": "./dist/es-ES/index.mjs"
     },
-    "./hi": {
-      "types": "./dist/hi.d.ts",
-      "require": "./dist/hi.js",
-      "import": "./dist/hi.mjs"
+    "./es-ES/*": {
+      "type": "./dist/es-ES/*.d.ts",
+      "require": "./dist/es-ES/*.js",
+      "import": "./dist/es-ES/*.mjs"
     },
-    "./pl": {
-      "types": "./dist/pl.d.ts",
-      "require": "./dist/pl.js",
-      "import": "./dist/pl.mjs"
+    "./fi-FI": {
+      "type": "./dist/fi-FI/index.d.ts",
+      "require": "./dist/fi-FI/index.js",
+      "import": "./dist/fi-FI/index.mjs"
     },
-    "./sv": {
-      "types": "./dist/sv.d.ts",
-      "require": "./dist/sv.js",
-      "import": "./dist/sv.mjs"
+    "./fi-FI/*": {
+      "type": "./dist/fi-FI/*.d.ts",
+      "require": "./dist/fi-FI/*.js",
+      "import": "./dist/fi-FI/*.mjs"
     },
-    "./th": {
-      "types": "./dist/th.d.ts",
-      "require": "./dist/th.js",
-      "import": "./dist/th.mjs"
+    "./fr-FR": {
+      "type": "./dist/fr-FR/index.d.ts",
+      "require": "./dist/fr-FR/index.js",
+      "import": "./dist/fr-FR/index.mjs"
     },
-    "./tr": {
-      "types": "./dist/tr.d.ts",
-      "require": "./dist/tr.js",
-      "import": "./dist/tr.mjs"
+    "./fr-FR/*": {
+      "type": "./dist/fr-FR/*.d.ts",
+      "require": "./dist/fr-FR/*.js",
+      "import": "./dist/fr-FR/*.mjs"
     },
-    "./vi": {
-      "types": "./dist/vi.d.ts",
-      "require": "./dist/vi.js",
-      "import": "./dist/vi.mjs"
+    "./hi-IN": {
+      "type": "./dist/hi-IN/index.d.ts",
+      "require": "./dist/hi-IN/index.js",
+      "import": "./dist/hi-IN/index.mjs"
     },
-    "./el": {
-      "types": "./dist/el.d.ts",
-      "require": "./dist/el.js",
-      "import": "./dist/el.mjs"
+    "./hi-IN/*": {
+      "type": "./dist/hi-IN/*.d.ts",
+      "require": "./dist/hi-IN/*.js",
+      "import": "./dist/hi-IN/*.mjs"
     },
-    "./mapper/baidu": {
-      "types": "./dist/mapper/baidu.d.ts",
-      "require": "./dist/mapper/baidu.js",
-      "import": "./dist/mapper/baidu.mjs"
+    "./it-IT": {
+      "type": "./dist/it-IT/index.d.ts",
+      "require": "./dist/it-IT/index.js",
+      "import": "./dist/it-IT/index.mjs"
     },
-    "./mapper/xunfei": {
-      "types": "./dist/mapper/xunfei.d.ts",
-      "require": "./dist/mapper/xunfei.js",
-      "import": "./dist/mapper/xunfei.mjs"
+    "./it-IT/*": {
+      "type": "./dist/it-IT/*.d.ts",
+      "require": "./dist/it-IT/*.js",
+      "import": "./dist/it-IT/*.mjs"
     },
-    "./mapper/youdao": {
-      "types": "./dist/mapper/youdao.d.ts",
-      "require": "./dist/mapper/youdao.js",
-      "import": "./dist/mapper/youdao.mjs"
+    "./ja-JP": {
+      "type": "./dist/ja-JP/index.d.ts",
+      "require": "./dist/ja-JP/index.js",
+      "import": "./dist/ja-JP/index.mjs"
     },
-    "./mapper/tencent": {
-      "types": "./dist/mapper/tencent.d.ts",
-      "require": "./dist/mapper/tencent.js",
-      "import": "./dist/mapper/tencent.mjs"
+    "./ja-JP/*": {
+      "type": "./dist/ja-JP/*.d.ts",
+      "require": "./dist/ja-JP/*.js",
+      "import": "./dist/ja-JP/*.mjs"
     },
-    "./mapper/google": {
-      "types": "./dist/mapper/iso639-1.d.ts",
-      "require": "./dist/mapper/iso639-1.js",
-      "import": "./dist/mapper/iso639-1.mjs"
+    "./ko-KR": {
+      "type": "./dist/ko-KR/index.d.ts",
+      "require": "./dist/ko-KR/index.js",
+      "import": "./dist/ko-KR/index.mjs"
     },
-    "./mapper/iso639-1": {
-      "types": "./dist/mapper/iso639-1.d.ts",
-      "require": "./dist/mapper/iso639-1.js",
-      "import": "./dist/mapper/iso639-1.mjs"
+    "./ko-KR/*": {
+      "type": "./dist/ko-KR/*.d.ts",
+      "require": "./dist/ko-KR/*.js",
+      "import": "./dist/ko-KR/*.mjs"
     },
-    "./mapper/iso639-2": {
-      "types": "./dist/mapper/iso639-2.d.ts",
-      "require": "./dist/mapper/iso639-2.js",
-      "import": "./dist/mapper/iso639-2.mjs"
+    "./nl-NL": {
+      "type": "./dist/nl-NL/index.d.ts",
+      "require": "./dist/nl-NL/index.js",
+      "import": "./dist/nl-NL/index.mjs"
     },
-    "./mapper/iso639-3": {
-      "types": "./dist/mapper/iso639-3.d.ts",
-      "require": "./dist/mapper/iso639-3.js",
-      "import": "./dist/mapper/iso639-3.mjs"
+    "./nl-NL/*": {
+      "type": "./dist/nl-NL/*.d.ts",
+      "require": "./dist/nl-NL/*.js",
+      "import": "./dist/nl-NL/*.mjs"
+    },
+    "./pl-PL": {
+      "type": "./dist/pl-PL/index.d.ts",
+      "require": "./dist/pl-PL/index.js",
+      "import": "./dist/pl-PL/index.mjs"
+    },
+    "./pl-PL/*": {
+      "type": "./dist/pl-PL/*.d.ts",
+      "require": "./dist/pl-PL/*.js",
+      "import": "./dist/pl-PL/*.mjs"
+    },
+    "./pt-PT": {
+      "type": "./dist/pt-PT/index.d.ts",
+      "require": "./dist/pt-PT/index.js",
+      "import": "./dist/pt-PT/index.mjs"
+    },
+    "./pt-PT/*": {
+      "type": "./dist/pt-PT/*.d.ts",
+      "require": "./dist/pt-PT/*.js",
+      "import": "./dist/pt-PT/*.mjs"
+    },
+    "./ru-RU": {
+      "type": "./dist/ru-RU/index.d.ts",
+      "require": "./dist/ru-RU/index.js",
+      "import": "./dist/ru-RU/index.mjs"
+    },
+    "./ru-RU/*": {
+      "type": "./dist/ru-RU/*.d.ts",
+      "require": "./dist/ru-RU/*.js",
+      "import": "./dist/ru-RU/*.mjs"
+    },
+    "./sv-SE": {
+      "type": "./dist/sv-SE/index.d.ts",
+      "require": "./dist/sv-SE/index.js",
+      "import": "./dist/sv-SE/index.mjs"
+    },
+    "./sv-SE/*": {
+      "type": "./dist/sv-SE/*.d.ts",
+      "require": "./dist/sv-SE/*.js",
+      "import": "./dist/sv-SE/*.mjs"
+    },
+    "./th-TH": {
+      "type": "./dist/th-TH/index.d.ts",
+      "require": "./dist/th-TH/index.js",
+      "import": "./dist/th-TH/index.mjs"
+    },
+    "./th-TH/*": {
+      "type": "./dist/th-TH/*.d.ts",
+      "require": "./dist/th-TH/*.js",
+      "import": "./dist/th-TH/*.mjs"
+    },
+    "./tr-TR": {
+      "type": "./dist/tr-TR/index.d.ts",
+      "require": "./dist/tr-TR/index.js",
+      "import": "./dist/tr-TR/index.mjs"
+    },
+    "./tr-TR/*": {
+      "type": "./dist/tr-TR/*.d.ts",
+      "require": "./dist/tr-TR/*.js",
+      "import": "./dist/tr-TR/*.mjs"
+    },
+    "./vi-VN": {
+      "type": "./dist/vi-VN/index.d.ts",
+      "require": "./dist/vi-VN/index.js",
+      "import": "./dist/vi-VN/index.mjs"
+    },
+    "./vi-VN/*": {
+      "type": "./dist/vi-VN/*.d.ts",
+      "require": "./dist/vi-VN/*.js",
+      "import": "./dist/vi-VN/*.mjs"
+    },
+    "./mapper/*": {
+      "types": "./dist/mapper/*.d.ts",
+      "require": "./dist/mapper/*.js",
+      "import": "./dist/mapper/*.mjs"
     },
     "./flags": {
       "types": "./dist/flags.d.ts",
