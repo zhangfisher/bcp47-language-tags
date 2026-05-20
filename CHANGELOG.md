@@ -1,5 +1,11 @@
 # bcp47-language-tags
 
+## 2.0.0
+
+### Major Changes
+
+- 636897a: 全新重构，支持摇树优化，按需引入
+
 ## 1.2.0
 
 ### Minor Changes
