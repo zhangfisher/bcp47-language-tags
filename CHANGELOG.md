@@ -1,5 +1,11 @@
 # bcp47-language-tags
 
+## 2.0.1
+
+### Patch Changes
+
+- b25db65: fix tags export errors
+
 ## 2.0.0
 
 ### Major Changes
