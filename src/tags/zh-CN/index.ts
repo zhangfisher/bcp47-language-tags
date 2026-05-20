@@ -13,7 +13,7 @@ import { ruRU } from "./ru-RU";
 import { zhCN } from "./zh-CN";
 import { zhTW } from "./zh-TW";
 
-const tags = [
+export const tags = [
   arEG,
   deDE,
   enUS,
