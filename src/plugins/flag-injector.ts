@@ -14,14 +14,17 @@ interface FlagInjectorOptions {
  * 2. 解析文件中的 code 值
  * 3. 读取对应的 flags/<code>.svg 文件内容
  * 4. 将 SVG 内容作为字符串注入到导出对象的 flag 字段中
- * 5. 自动修复源文件中缺少分号的 import type 语句
- * 6. 跳过 index.ts 文件（仅作为导入入口）
+ * 5. 如果 flag 字段已存在且为空字符串 ""，则替换为 SVG
+ * 6. 如果 flag 字段已存在且有内容，则跳过
+ * 7. 自动修复源文件中缺少分号的 import type 语句
+ * 8. 跳过 index.ts 文件（仅作为导入入口）
  */
 export function flagInjectorPlugin(options: FlagInjectorOptions = {}): Plugin {
   const flagsDir = options.flagsDir || path.join(process.cwd(), "src", "flags");
 
   // 统计变量
   let injectedCount = 0;
+  let replacedCount = 0;
   let skippedCount = 0;
   let totalProcessed = 0;
 
@@ -30,8 +33,8 @@ export function flagInjectorPlugin(options: FlagInjectorOptions = {}): Plugin {
 
     setup(build) {
       build.onEnd(() => {
-        if (injectedCount > 0) {
-          console.log(`\n[flag-injector] 📊 统计: 总共处理 ${totalProcessed} 个文件，注入 ${injectedCount} 个 flag，跳过 ${skippedCount} 个（包括 index.ts）`);
+        if (injectedCount > 0 || replacedCount > 0) {
+          console.log(`\n[flag-injector] 📊 统计: 总共处理 ${totalProcessed} 个文件，新增 ${injectedCount} 个 flag，替换 ${replacedCount} 个空 flag，跳过 ${skippedCount} 个`);
         }
       });
 
@@ -78,13 +81,33 @@ export function flagInjectorPlugin(options: FlagInjectorOptions = {}): Plugin {
         const svgContent = fs.readFileSync(flagFilePath, "utf-8");
         const svgStringLiteral = JSON.stringify(svgContent);
 
-        // 在 nativeName 后添加 flag 字段
-        const modifiedCode = sourceCode.replace(
-          /("nativeName"\s*:\s*"[^"]+")(\};?)/,
-          `$1,flag:${svgStringLiteral}$2`
-        );
+        let modifiedCode: string;
 
-        injectedCount++;
+        // 检查是否已存在 flag 字段（支持 flag:"" 和 "flag":"" 两种格式）
+        const flagMatch = sourceCode.match(/flag\s*:\s*"([^"]*)"/);
+
+        if (flagMatch) {
+          // flag 字段已存在，替换内容
+          if (flagMatch[1] === "") {
+            // flag 为空字符串，替换为 SVG
+            modifiedCode = sourceCode.replace(
+              /flag\s*:\s*""/,
+              `flag:${svgStringLiteral}`
+            );
+            replacedCount++;
+          } else {
+            // flag 已有内容，跳过
+            skippedCount++;
+            return undefined;
+          }
+        } else {
+          // flag 字段不存在，添加新字段
+          modifiedCode = sourceCode.replace(
+            /("nativeName"\s*:\s*"[^"]+")(\};?)/,
+            `$1,flag:${svgStringLiteral}$2`
+          );
+          injectedCount++;
+        }
 
         // 返回修改后的内容
         return {
