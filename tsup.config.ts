@@ -2,6 +2,7 @@ import { defineConfig, Options } from "tsup";
 import { raw } from "esbuild-raw-plugin";
 // @ts-ignore
 import copy from "esbuild-copy-static-files";
+import { flagInjectorPlugin } from "./src/plugins/flag-injector";
 
 const languages = [
   "zh-CN", //  简体中文
@@ -39,61 +40,28 @@ const mapTo = [
 ];
 
 export default defineConfig([
-  {
-    entry: ["src/index.ts"],
-    outDir: "dist",
-    minify: true,
-    dts: true,
-    clean: true,
-    cjsInterop: true,
-    format: ["cjs", "esm"],
-  },
-  {
-    entry: ["src/flags.ts"],
-    outDir: "dist",
-    minify: true,
-    dts: false,
-    cjsInterop: true,
-    format: ["cjs", "esm"],
-    esbuildPlugins: [
-      raw(),
-      copy({
-        src: "./src/flags",
-        dest: "./dist/flags",
-        recursive: true,
-        preserveTimestamps: true,
-        dereference: true,
-        errorOnExist: false,
-        force: true,
-      }),
-    ],
-  },
-  {
-    entry: ["src/utils/index.ts"],
-    outDir: "dist/utils",
-    minify: true,
-    dts: true,
-    cjsInterop: true,
-    format: ["cjs", "esm"],
-  },
-  ...languages.map((lng) => {
-    return {
-      entry: [`src/tags/${lng}/*.ts`],
-      outDir: `dist/${lng}`,
-      minify: true,
-      dts: true,
-      cjsInterop: true,
-      format: ["cjs", "esm"],
-    } as Options;
-  }),
-  ...mapTo.map((to) => {
-    return {
-      entry: [`src/mapper/${to}.ts`],
-      outDir: "dist/mapper",
-      minify: true,
-      dts: true,
-      cjsInterop: true,
-      format: ["cjs", "esm"],
-    } as Options;
+  ...languages.flatMap((lng) => {
+    return [
+      // 构建 tag 文件（注入 flag），排除 index.ts
+      {
+        entry: [`src/tags/${lng}/*.ts`],
+        outDir: `dist/withFlags/${lng}`,
+        minify: true,
+        dts: false,
+        format: ["cjs", "esm"],
+        splitting: false,
+        esbuildPlugins: [flagInjectorPlugin()]
+      } as Options,
+      // 单独构建 index.ts（外部依赖，不打包 tag 文件）
+      {
+        entry: [`src/tags/${lng}/index.ts`],
+        outDir: `dist/withFlags/${lng}`,
+        minify: true,
+        dts: false,
+        format: ["cjs", "esm"],
+        // 将所有相对导入标记为外部
+        external: ['./*.js', './*.mjs'],
+      } as Options,
+    ];
   }),
 ]);

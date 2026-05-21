@@ -1,2 +1,2 @@
 import type { BCP47LanguageTag } from "../../types"
-export const msMY: BCP47LanguageTag = {"tag":"ms-MY","name":"Malaiisch (Malaysia)","nativeName":"Bahasa Melayu (Malaysia)"};
+export const msMY: BCP47LanguageTag = {"code":"ms-MY","name":"Malaiisch (Malaysia)","nativeName":"Bahasa Melayu (Malaysia)",flag:""};

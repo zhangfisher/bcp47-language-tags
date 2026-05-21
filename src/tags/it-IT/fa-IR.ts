@@ -1,2 +1,2 @@
 import type { BCP47LanguageTag } from "../../types"
-export const faIR: BCP47LanguageTag = {"tag":"fa-IR","name":"Persiano (Iran)","nativeName":"فارسی (ایران)"};
+export const faIR: BCP47LanguageTag = {"code":"fa-IR","name":"Persiano (Iran)","nativeName":"فارسی (ایران)",flag:""};

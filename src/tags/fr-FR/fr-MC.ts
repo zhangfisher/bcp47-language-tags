@@ -1,2 +1,2 @@
 import type { BCP47LanguageTag } from "../../types"
-export const frMC: BCP47LanguageTag = {"tag":"fr-MC","name":"Français (Monaco)","nativeName":"Français (Monaco)"};
+export const frMC: BCP47LanguageTag = {"code":"fr-MC","name":"Français (Monaco)","nativeName":"Français (Monaco)",flag:""};

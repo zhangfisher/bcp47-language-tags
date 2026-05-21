@@ -1,2 +1,2 @@
 import type { BCP47LanguageTag } from "../../types"
-export const zhTW: BCP47LanguageTag = {"tag":"zh-TW","name":"Tradiční čínština (Tchaj-wan)","nativeName":"繁體中文(中國臺灣)"};
+export const zhTW: BCP47LanguageTag = {"code":"zh-TW","name":"Tradiční čínština (Tchaj-wan)","nativeName":"繁體中文(中國臺灣)",flag:""};

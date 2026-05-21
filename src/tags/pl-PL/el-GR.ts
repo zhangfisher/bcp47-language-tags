@@ -1,2 +1,2 @@
 import type { BCP47LanguageTag } from "../../types"
-export const elGR: BCP47LanguageTag = {"tag":"el-GR","name":"Grecki (Grecja)","nativeName":"Ελληνικά (Ελλάδα)"};
+export const elGR: BCP47LanguageTag = {"code":"el-GR","name":"Grecki (Grecja)","nativeName":"Ελληνικά (Ελλάδα)",flag:""};

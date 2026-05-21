@@ -1,2 +1,2 @@
 import type { BCP47LanguageTag } from "../../types"
-export const svFI: BCP47LanguageTag = {"tag":"sv-FI","name":"Schwedisch (Finnland)","nativeName":"Svenska (Finland)"};
+export const svFI: BCP47LanguageTag = {"code":"sv-FI","name":"Schwedisch (Finnland)","nativeName":"Svenska (Finland)",flag:""};

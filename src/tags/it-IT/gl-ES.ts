@@ -1,2 +1,2 @@
 import type { BCP47LanguageTag } from "../../types"
-export const glES: BCP47LanguageTag = {"tag":"gl-ES","name":"Galiziano (Galizia)","nativeName":"Galego (Galicia)"};
+export const glES: BCP47LanguageTag = {"code":"gl-ES","name":"Galiziano (Galizia)","nativeName":"Galego (Galicia)",flag:""};

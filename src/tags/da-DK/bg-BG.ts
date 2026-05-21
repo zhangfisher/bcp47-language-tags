@@ -1,2 +1,2 @@
 import type { BCP47LanguageTag } from "../../types"
-export const bgBG: BCP47LanguageTag = {"tag":"bg-BG","name":"Bulgarsk (Bulgarien)","nativeName":"Български (България)"};
+export const bgBG: BCP47LanguageTag = {"code":"bg-BG","name":"Bulgarsk (Bulgarien)","nativeName":"Български (България)",flag:""};

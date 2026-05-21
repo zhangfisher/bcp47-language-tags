@@ -1,2 +1,2 @@
 import type { BCP47LanguageTag } from "../../types"
-export const teIN: BCP47LanguageTag = {"tag":"te-IN","name":"テルグ語（インド）","nativeName":"తెలుగు (భారతదేశం)"};
+export const teIN: BCP47LanguageTag = {"code":"te-IN","name":"テルグ語（インド）","nativeName":"తెలుగు (భారతదేశం)",flag:""};

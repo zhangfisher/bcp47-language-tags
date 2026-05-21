@@ -1,2 +1,2 @@
 import type { BCP47LanguageTag } from "../../types"
-export const enJM: BCP47LanguageTag = {"tag":"en-JM","name":"Inglés (Jamaica)","nativeName":"English (Jamaica)"};
+export const enJM: BCP47LanguageTag = {"code":"en-JM","name":"Inglés (Jamaica)","nativeName":"English (Jamaica)",flag:""};

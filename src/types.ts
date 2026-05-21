@@ -136,9 +136,10 @@ export type BCP47LanguageTagName =
 
 // BCP47 语言标签类型，定义单个语言标签的结构
 export type BCP47LanguageTag<T = string> = {
-  tag: T;
+  code: T;
   name: string;
   nativeName: string;
+  flag: string;
 };
 
 // BCP47 语言标签集合类型，以标签名称为键的记录

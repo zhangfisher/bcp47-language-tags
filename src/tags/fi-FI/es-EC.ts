@@ -1,2 +1,2 @@
 import type { BCP47LanguageTag } from "../../types"
-export const esEC: BCP47LanguageTag = {"tag":"es-EC","name":"Espanja (Ecuador)","nativeName":"Español (Ecuador)"};
+export const esEC: BCP47LanguageTag = {"code":"es-EC","name":"Espanja (Ecuador)","nativeName":"Español (Ecuador)",flag:""};

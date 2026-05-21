@@ -1,2 +1,2 @@
 import type { BCP47LanguageTag } from "../../types"
-export const heIL: BCP47LanguageTag = {"tag":"he-IL","name":"ฮีบรู (อิสราเอล)","nativeName":"עברית (ישראל)"};
+export const heIL: BCP47LanguageTag = {"code":"he-IL","name":"ฮีบรู (อิสราเอล)","nativeName":"עברית (ישראל)",flag:""};

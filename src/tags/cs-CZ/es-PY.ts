@@ -1,2 +1,2 @@
 import type { BCP47LanguageTag } from "../../types"
-export const esPY: BCP47LanguageTag = {"tag":"es-PY","name":"Španělština (Paraguay)","nativeName":"Español (Paraguay)"};
+export const esPY: BCP47LanguageTag = {"code":"es-PY","name":"Španělština (Paraguay)","nativeName":"Español (Paraguay)",flag:""};

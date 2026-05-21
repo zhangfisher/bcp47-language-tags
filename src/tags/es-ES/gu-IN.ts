@@ -1,2 +1,2 @@
 import type { BCP47LanguageTag } from "../../types"
-export const guIN: BCP47LanguageTag = {"tag":"gu-IN","name":"Guyaratí (India)","nativeName":"ગુજરાતી (ભારત)"};
+export const guIN: BCP47LanguageTag = {"code":"gu-IN","name":"Guyaratí (India)","nativeName":"ગુજરાતી (ભારત)",flag:""};

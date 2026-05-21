@@ -1,2 +1,2 @@
 import type { BCP47LanguageTag } from "../../types"
-export const ptPT: BCP47LanguageTag = {"tag":"pt-PT","name":"Portugisisk (Portugal)","nativeName":"Português (Portugal)"};
+export const ptPT: BCP47LanguageTag = {"code":"pt-PT","name":"Portugisisk (Portugal)","nativeName":"Português (Portugal)",flag:""};

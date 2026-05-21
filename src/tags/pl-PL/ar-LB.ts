@@ -1,2 +1,2 @@
 import type { BCP47LanguageTag } from "../../types"
-export const arLB: BCP47LanguageTag = {"tag":"ar-LB","name":"Arabski (Liban)","nativeName":"العربية (لبنان)"};
+export const arLB: BCP47LanguageTag = {"code":"ar-LB","name":"Arabski (Liban)","nativeName":"العربية (لبنان)",flag:""};
