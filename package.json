@@ -271,6 +271,8 @@
   },
   "scripts": {
     "build": "tsup",
+    "build:seq": "tsx build.ts",
+    "inject-flags": "node scripts/inject-flags.js",
     "changeset": "changeset",
     "release": "changeset version && changeset publish",
     "only-release": "npm publish"
@@ -281,8 +283,10 @@
     "@types/node": "^25.9.1",
     "esbuild-copy-static-files": "^0.1.0",
     "esbuild-raw-plugin": "^0.3.1",
+    "oxfmt": "^0.51.0",
+    "oxlint": "^1.66.0",
     "rzl-cmd-svg-to-png-converter": "^1.0.0",
     "tsup": "^8.5.1",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   }
 }
