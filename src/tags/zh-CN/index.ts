@@ -13,7 +13,7 @@ import { ruRU } from "./ru-RU";
 import { zhCN } from "./zh-CN";
 import { zhTW } from "./zh-TW";
 
-export const tags = [
+const tags = [
   arEG,
   deDE,
   enUS,
@@ -29,6 +29,7 @@ export const tags = [
 
 const { getTag, getTags, addTag, deleteTag } = createTagUtils(tags);
 
-export { getTag, getTags, addTag, deleteTag };
+export { tags, getTag, getTags, addTag, deleteTag };
+export default { tags, getTag, getTags, addTag, deleteTag };
 
 export * from "../../types";

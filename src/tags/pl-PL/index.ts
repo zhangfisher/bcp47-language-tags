@@ -13,22 +13,11 @@ import { ruRU } from "./ru-RU";
 import { zhCN } from "./zh-CN";
 import { zhTW } from "./zh-TW";
 
-export const tags = [
-  arEG,
-  deDE,
-  enUS,
-  esES,
-  frFR,
-  itIT,
-  jaJP,
-  koKR,
-  ruRU,
-  zhCN,
-  zhTW,
-];
+const tags = [arEG, deDE, enUS, esES, frFR, itIT, jaJP, koKR, ruRU, zhCN, zhTW];
 
 const { getTag, getTags, addTag, deleteTag } = createTagUtils(tags);
 
-export { getTag, getTags, addTag, deleteTag };
+export { tags, getTag, getTags, addTag, deleteTag };
+export default { tags, getTag, getTags, addTag, deleteTag };
 
 export * from "../../types";

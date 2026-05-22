@@ -1,15 +1,15 @@
 // BCP47 Primary Language Tags Flag Exports
 
-import zhCN from "./flags/zh-CN.svg?raw"; //  简体中文
-import enUS from "./flags/en-US.svg?raw"; //  美国英语
-import ruRU from "./flags/ru-RU.svg?raw"; //  俄语
-import esES from "./flags/es-ES.svg?raw"; //  西班牙语
-import frFR from "./flags/fr-FR.svg?raw"; //  法语
-import deDE from "./flags/de-DE.svg?raw"; //  德语
-import itIT from "./flags/it-IT.svg?raw"; //  意大利语
-import arEG from "./flags/ar-EG.svg?raw"; //  阿拉伯语(埃及)
-import jaJP from "./flags/ja-JP.svg?raw"; //  日语
-import koKR from "./flags/ko-KR.svg?raw"; //  韩语
+import zhCN from "./flags/dataurl/zh-CN"; //  简体中文
+import enUS from "./flags/dataurl/en-US"; //  美国英语
+import ruRU from "./flags/dataurl/ru-RU"; //  俄语
+import esES from "./flags/dataurl/es-ES"; //  西班牙语
+import frFR from "./flags/dataurl/fr-FR"; //  法语
+import deDE from "./flags/dataurl/de-DE"; //  德语
+import itIT from "./flags/dataurl/it-IT"; //  意大利语
+import arEG from "./flags/dataurl/ar-EG"; //  阿拉伯语(埃及)
+import jaJP from "./flags/dataurl/ja-JP"; //  日语
+import koKR from "./flags/dataurl/ko-KR"; //  韩语
 
 const zhTW = zhCN;
 // Named exports

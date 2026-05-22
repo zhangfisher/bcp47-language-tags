@@ -1,20 +1,47 @@
 # bcp47-language-tags
 
-[![npm version](https://badge.fury.io/js/bcp47-language-tags.svg)](https://www.npmjs.com/package/bcp47-language-tags)
+[![npm version](https://badge.fury.io/js/bcp47-language-tags.svg)](https://www.npmjs.org/package/bcp47-language-tags)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 [中文](./README_CN.md) | [English](./README.md)
 
-Complete list of BCP-47 standard language tags with TypeScript type definitions, multilingual translations, and SVG flag resources.
+Complete list of BCP-47 standard language tags with TypeScript type definitions, multilingual translations, and SVG/PNG flag resources.
 
 ## Features
 
 - 🌍 **180+ Language Tags** - Comprehensive coverage of BCP-47 standard language tags
 - 🌐 **Multilingual Translations** - Localized language names in 22 languages
-- 🏳️ **SVG Flag Resources** - Built-in SVG flags for all supported languages
+- 🏳️ **Flag Resources** - Built-in SVG and PNG flags for all supported languages
 - 🎯 **TypeScript Support** - Complete type definitions for type-safe development
 - 🗺️ **Mapper Support** - Convert BCP-47 tags to ISO 639-1/2/3 and platform-specific codes
 - ⚡ **Tree-shakeable** - Import only what you need with full Tree-shaking support
+
+## Project Structure
+
+```
+src/
+├── flags/              # Flag resources directory
+│   ├── dataurl/       # Base64 encoded flag data
+│   ├── png/           # PNG format flags (32x32)
+│   └── svg/           # SVG format flags
+├── mapper/            # Language code mappers
+│   ├── baidu.ts       # Baidu Translate API mapping
+│   ├── youdao.ts      # Youdao Translate API mapping
+│   ├── tencent.ts     # Tencent Translate API mapping
+│   ├── xunfei.ts      # Xunfei Translate API mapping
+│   ├── iso639-1.ts    # ISO 639-1 standard mapping
+│   ├── iso639-2.ts    # ISO 639-2 standard mapping
+│   └── iso639-3.ts    # ISO 639-3 standard mapping
+├── tags/              # Multilingual tag data
+│   ├── zh-CN/         # Chinese localization data
+│   ├── en-US/         # English localization data
+│   ├── ar-EG/         # Arabic localization data
+│   └── ...            # Other 22 languages
+├── utils/             # Utility functions
+│   └── createTagUtils.ts  # Tag utility function generator
+├── types.ts           # TypeScript type definitions
+└── index.ts           # Main entry file
+```
 
 ## Installation
 
@@ -28,47 +55,49 @@ bun add bcp47-language-tags
 pnpm add bcp47-language-tags
 ```
 
-## Guide
+## Usage Guide
 
 ### Import Primary Language Tags
 
-Import primary used language tags with localized names:
+Import commonly used language tags with localized names:
 
 ```typescript
-import { tags } from 'bcp47-language-tags/en-US';
+import { tags } from "bcp47-language-tags/en-US";
 
 for (const tag of tags) {
   console.log(tag);
 }
 // Output:
 // [
-//   { tag: 'zh-CN', name: 'Simplified Chinese', nativeName: '简体中文' },
-//   { tag: 'zh-TW', name: 'Traditional Chinese (Taiwan)', nativeName: '繁體中文(中國臺灣)' }
-//   { tag: 'ar-EG', name: 'Arabic (Egypt)', nativeName: 'العربية (مصر)' },
-//   { tag: 'de-DE', name: 'German (Germany)', nativeName: 'Deutsch (Deutschland)' },
-//   { tag: 'en-US', name: 'English (United States)', nativeName: 'English (United States)'},
-//   { tag: 'es-ES', name: 'Spanish (Spain)', nativeName: 'Español (España)' },
-//   { tag: 'fr-FR', name: 'French (France)', nativeName: 'Français (France)' },
-//   { tag: 'it-IT', name: 'Italian (Italy)', nativeName: 'Italiano (Italia)' },
-//   { tag: 'ja-JP', name: 'Japanese (Japan)', nativeName: '日本語 (日本)' },
-//   { tag: 'ko-KR', name: 'Korean (South Korea)', nativeName: '한국어 (대한민국)' },
-//   { tag: 'ru-RU', name: 'Russian (Russia)', nativeName: 'Русский (Россия)' }  
+//   { code: 'zh-CN', name: 'Simplified Chinese', nativeName: '简体中文' },
+//   { code: 'zh-TW', name: 'Traditional Chinese (Taiwan)', nativeName: '繁體中文(中國臺灣)' }
+//   { code: 'ar-EG', name: 'Arabic (Egypt)', nativeName: 'العربية (مصر)' },
+//   { code: 'de-DE', name: 'German (Germany)', nativeName: 'Deutsch (Deutschland)' },
+//   { code: 'en-US', name: 'English (United States)',nativeName: 'English (United States)'},
+//   { code: 'es-ES', name: 'Spanish (Spain)', nativeName: 'Español (España)' },
+//   { code: 'fr-FR', name: 'French (France)', nativeName: 'Français (France)' },
+//   { code: 'it-IT', name: 'Italian (Italy)', nativeName: 'Italiano (Italia)' },
+//   { code: 'ja-JP', name: 'Japanese (Japan)', nativeName: '日本語 (日本)' },
+//   { code: 'ko-KR', name: 'Korean (South Korea)', nativeName: '한국어 (대한민국)' },
+//   { code: 'ru-RU', name: 'Russian (Russia)', nativeName: 'Русский (Россия)' }
 // ]
 ```
-- For package size considerations, only `11` primary language tags are imported by default.
-- `name` is the localized language name based on the imported module. For example, if importing from `bcp47-language-tags/en-US`, the names will be in English.
-- `nativeName` is always in the native writing form of the language, making it easy for native speakers to identify
+
+**Notes:**
+- 11 commonly used language tags are imported by default
+- `code` is the BCP-47 language tag code
+- `name` is the localized language name based on the imported module
+- `nativeName` is the language in its native writing form
 
 ### Import Specific Language Data
 
-In the example above, we used `import { tags } from 'bcp47-language-tags/en-US'`, which means the `name` field in `tags` is in English.
-If you prefer another language, you can use `import { tags } from 'bcp47-language-tags/<language tag>'`
+Choose different localized data based on your needs:
 
 ```typescript
 // Import Chinese language data
-import { tags } from 'bcp47-language-tags/zh-CN';
+import { tags } from "bcp47-language-tags/zh-CN";
 // Import English language data
-import { tags } from 'bcp47-language-tags/en-US';
+import { tags } from "bcp47-language-tags/en-US";
 ```
 
 **Supported export languages:**
@@ -98,98 +127,95 @@ import { tags } from 'bcp47-language-tags/en-US';
 | Finnish | `bcp47-language-tags/fi-FI` |
 | Czech | `bcp47-language-tags/cs-CZ` |
 
-### Extending Languages
+### Extending Language Tags
 
-For package size considerations, only `11` primary language tags are imported by default.
+By default only 11 common languages are included. To add other language tags:
 
-If the language you want to use is not among the `11` primary language tags, you can extend it in the following ways:
-
-```ts
-// tags contains the default 11 language tags
+```typescript
+// Import default tags and utility functions
 import { tags, addTag } from 'bcp47-language-tags/en-US';
-// tags output:
-// [
-//   { tag: 'zh-CN', name: 'Simplified Chinese', nativeName: '简体中文' },
-//   { tag: 'zh-TW', name: 'Traditional Chinese (Taiwan)', nativeName: '繁體中文(中國臺灣)' }
-//   { tag: 'ar-EG', name: 'Arabic (Egypt)', nativeName: 'العربية (مصر)' },
-//   { tag: 'de-DE', name: 'German (Germany)', nativeName: 'Deutsch (Deutschland)' },
-//   { tag: 'en-US', name: 'English (United States)', nativeName: 'English (United States)'},
-//   { tag: 'es-ES', name: 'Spanish (Spain)', nativeName: 'Español (España)' },
-//   { tag: 'fr-FR', name: 'French (France)', nativeName: 'Français (France)' },
-//   { tag: 'it-IT', name: 'Italian (Italy)', nativeName: 'Italiano (Italia)' },
-//   { tag: 'ja-JP', name: 'Japanese (Japan)', nativeName: '日本語 (日本)' },
-//   { tag: 'ko-KR', name: 'Korean (South Korea)', nativeName: '한국어 (대한민국)' },
-//   { tag: 'ru-RU', name: 'Russian (Russia)', nativeName: 'Русский (Россия)' }  
-// ]
-// Import English (UK)
-import { enGB } from 'bcp47-language-tags/en-US/en-GB'
-// Import Portuguese (Brazil)
-import { ptBR } from 'bcp47-language-tags/en-US/pt-BR'
-// Add to tags
-addTag(enGB)
-addTag(ptBR)
 
-console.log(tags)
-// tags output:
-// [
-//   { tag: 'zh-CN', name: 'Simplified Chinese', nativeName: '简体中文' },
-//   { tag: 'zh-TW', name: 'Traditional Chinese (Taiwan)', nativeName: '繁體中文(中國臺灣)' }
-//   { tag: 'ar-EG', name: 'Arabic (Egypt)', nativeName: 'العربية (مصر)' },
-//   { tag: 'de-DE', name: 'German (Germany)', nativeName: 'Deutsch (Deutschland)' },
-//   { tag: 'en-US', name: 'English (United States)', nativeName: 'English (United States)'},
-//   { tag: 'es-ES', name: 'Spanish (Spain)', nativeName: 'Español (España)' },
-//   { tag: 'fr-FR', name: 'French (France)', nativeName: 'Français (France)' },
-//   { tag: 'it-IT', name: 'Italian (Italy)', nativeName: 'Italiano (Italia)' },
-//   { tag: 'ja-JP', name: 'Japanese (Japan)', nativeName: '日本語 (日本)' },
-//   { tag: 'ko-KR', name: 'Korean (South Korea)', nativeName: '한국어 (대한민국)' },
-//   { tag: 'ru-RU', name: 'Russian (Russia)', nativeName: 'Русский (Россия)' },
-//   Added:
-//   {"tag":"en-GB","name":"English (United Kingdom)","nativeName":"English (United Kingdom)"},
-//   {"tag":"pt-BR","name":"Portuguese (Brazil)","nativeName":"Português (Brasil)"};
-// ]
+// Import extended language tags
+import { enGB } from 'bcp47-language-tags/en-US/en-GB';
+import { ptBR } from 'bcp47-language-tags/en-US/pt-BR';
 
+// Add to tag list
+addTag(enGB);
+addTag(ptBR);
 
-// Extend TypeScript types
+console.log(tags);
+// Now includes the newly added language tags
+```
+
+**Extend TypeScript type declarations:**
+
+```typescript
 declare module "bcp47-language-tags" {
-   interface PrimaryLanguageTags{
-      "en-GB": BCP47LanguageTag
-      "pt-BR": BCP47LanguageTag
-   }    
+  interface PrimaryLanguageTags {
+    "en-GB": BCP47LanguageTag;
+    "pt-BR": BCP47LanguageTag;
+  }
 }
-````
+```
 
-### Major Language Flags
+### Import Language Tags with Flags
 
-Get SVG data for primary used major language flags:
+If you need flag data:
 
 ```typescript
-import flags from 'bcp47-language-tags/flags';
+import { tags } from "bcp47-language-tags/with-flags/en-US";
 
-// Access flag SVG data
-console.log(flags.zhCN);
-// <svg xmlns="http://www.w3.org/2000/svg" ...>
-//   <path fill="#de2910" d="..."/>
+for (const tag of tags) {
+  console.log(tag);
+}
+// Output:
+// [
+//   { code: 'zh-CN', name: 'Simplified Chinese', nativeName: '简体中文',
+//       flag:"data:image/png;base64,iVBORw0KGgo......" },
 //   ...
-// </svg>
-
-// Available flags:
-// Simplified Chinese, Traditional Chinese, US English, Russian, Spanish, French, German, Italian, Arabic (Egypt), Japanese, Korean
-// zh-CN, zh-TW, en-US, ru-RU, es-ES, fr-FR, de-DE, it-IT, ar-EG, ja-JP, ko-KR,
+// ]
 ```
 
-### Other Language Flags
+**Notes:**
+- Import from `bcp47-language-tags/with-flags/<tag>` for PNG format flag dataurl
+- PNG flag size is 32×24 pixels
+- PNG format recommended for most scenarios, reasonable file size (1-2KB)
 
-Directly import `SVG` flag files (requires build tools like `Vite` that support `SVG` import):
+### Flag Resource Usage
+
+**Method 1: Import Flag Collection (Primary Languages Only)**
 
 ```typescript
-import zhCN from 'bcp47-language-tags/flags/zh-CN.svg?raw';
-import enUS from 'bcp47-language-tags/flags/en-US.svg?raw';
-import esES from 'bcp47-language-tags/flags/es-ES.svg?raw';
+import flags from "bcp47-language-tags/flags";
+
+console.log(flags);
+// {
+//     zhCN: "data:image/png;base64,...",
+//     zhTW: "data:image/png;base64,...",
+//     enUS: "data:image/png;base64,...",
+//     ...
+// }
 ```
 
-> **Note:** Direct SVG import requires build tools with SVG support (such as Vite with appropriate plugins configured).
+**Method 2: Direct SVG Flag Import**
 
-### Mapper
+```typescript
+import zhCN from "bcp47-language-tags/flags/svg/zh-CN?raw";
+import enUS from "bcp47-language-tags/flags/svg/en-US?raw";
+```
+
+**Method 3: Direct PNG Flag Import**
+
+```typescript
+import zhCN from "bcp47-language-tags/flags/png/zh-CN?raw";
+import enUS from "bcp47-language-tags/flags/png/en-US?raw";
+```
+
+**Notes:**
+- PNG image size is 32×32 pixels
+- SVG import requires build tools with SVG support (like Vite)
+
+### Mapper Usage
 
 Convert BCP-47 language tags to other standards:
 
@@ -201,70 +227,32 @@ import {
   xunfei,
   ISO6391,
   ISO6392,
-  ISO6393
-} from 'bcp47-language-tags/mapper';
+  ISO6393,
+} from "bcp47-language-tags/mapper";
 
 // Convert to platform-specific codes
-baidu['zh-CN'];     // 'zh'
-youdao['zh-CN'];    // 'zh'
-tencent['zh-CN'];   // 'zh'
-xunfei['zh-CN'];    // 'zh'
+baidu["zh-CN"];    // 'zh'
+youdao["zh-CN"];   // 'zh'
+tencent["zh-CN"];  // 'zh'
+xunfei["zh-CN"];   // 'zh'
 
 // Convert to ISO 639 standards
-ISO6391['zh-CN'];   // 'zh'
-ISO6392['zh-CN'];   // 'zho'
-ISO6393['zh-CN'];   // 'zho'
+ISO6391["zh-CN"];  // 'zh'
+ISO6392["zh-CN"];  // 'zho'
+ISO6393["zh-CN"];  // 'zho'
 ```
 
-## BCP47LanguageTag Type Description
+## API Reference
 
-`BCP47LanguageTag` is the core data type of this library, representing a single language tag and its localization information.
- 
-| Field | Type | Description |
-|------|------|-------------|
-| `tag` | `string` | `BCP-47` language tag code, such as `zh-CN`, `en-US` |
-| `name` | `string` | Localized language name, depends on the imported language module |
-| `nativeName` | `string` | Native name of the language (in the language's own writing form) |
-
-- The `nativeName` field stores the **native writing form** of the language, which is how users of that language see their language name. This is very important for building user-friendly language selectors.
-
-**Why do we need nativeName?**
-
-1. **User Recognition**: Let users quickly identify their own language
-2. **Localization Experience**: Display native language names in the language switching interface
-3. **Avoid Confusion**: Translations of some languages in different regions may not be accurate enough
-
-**Actual Application Scenario:**
-
-```typescript
-// Suppose you are building a language selector for a multilingual application
-import { tags } from 'bcp47-language-tags/en-US';
-
-// Display in language selector
-tags.map(tag => ({
-  label: `${tag.nativeName} (${tag.name})`,  // "简体中文 (Simplified Chinese)"
-  value: tag.tag
-}));
-
-// Options users see:
-// - 简体中文 (Simplified Chinese)
-// - English (English (United States))
-// - 日本語 (Japanese)
-// - 한국어 (Korean)
-```
-
-## API
-
-### getTag(tag: string): BCP47LanguageTag | undefined
+### getTag(code: string): BCP47LanguageTag | undefined
 
 Get a specific language tag.
 
 ```typescript
-import { getTag } from 'bcp47-language-tags/en-US';
+import { getTag } from "bcp47-language-tags/en-US";
 
-// Get specific tag
-getTag('zh-CN');  // { tag: "zh-CN", name: "Simplified Chinese", nativeName: "简体中文" }
-getTag('en-US');  // { tag: "en-US", name: "English (United States)", nativeName: "English (United States)" }
+getTag("zh-CN"); // { code: "zh-CN", name: "Simplified Chinese", nativeName: "简体中文" }
+getTag("en-US"); // { code: "en-US", name: "English (United States)", nativeName: "English (United States)" }
 ```
 
 ### getTags(language?: string | string[]): BCP47LanguageTag[]
@@ -272,15 +260,15 @@ getTag('en-US');  // { tag: "en-US", name: "English (United States)", nativeName
 Get all tags or filter by language code.
 
 ```typescript
-import { getTags } from 'bcp47-language-tags/en-US';
+import { getTags } from "bcp47-language-tags/en-US";
 
 // Get all tags
 getTags();
 
 // Filter by language
-getTags('zh');    // All Chinese variants
-getTags(['zh', 'en']);  // Chinese and English variants
-getTags(['zh-CN', 'en-US']);  // Specific tags
+getTags("zh");           // All Chinese variants
+getTags(["zh", "en"]);   // Chinese and English variants
+getTags(["zh-CN", "en-US"]); // Specific tags
 ```
 
 ### addTag(tag: BCP47LanguageTag): void
@@ -288,40 +276,31 @@ getTags(['zh-CN', 'en-US']);  // Specific tags
 Add a new language tag to the tag list. If the tag already exists, it will not be added again.
 
 ```typescript
-import { tags, addTag } from 'bcp47-language-tags/en-US';
+import { tags, addTag } from "bcp47-language-tags/en-US";
 
 // Add a single language tag
 addTag({
-  tag: 'en-GB',
-  name: 'English (United Kingdom)',
-  nativeName: 'English (United Kingdom)'
-});
-
-// Tags that already exist will not be added again
-addTag({
-  tag: 'en-GB',
-  name: 'English (United Kingdom)',
-  nativeName: 'English (United Kingdom)'
+  code: "en-GB",
+  name: "English (United Kingdom)",
+  nativeName: "English (United Kingdom)",
 });
 ```
 
 ### deleteTag(language: string | string[]): void
 
-Delete tags for specified languages from the tag list.
+Delete specified language tags from the tag list.
 
 ```typescript
-import { tags, deleteTag } from 'bcp47-language-tags/en-US';
+import { tags, deleteTag } from "bcp47-language-tags/en-US";
 
 // Delete all variants of a single language
-deleteTag('zh');  // Delete all Chinese tags (zh-CN, zh-TW, etc.)
+deleteTag("zh");  // Delete all Chinese tags
 
 // Delete all variants of multiple languages
-deleteTag(['zh', 'en']);  // Delete all Chinese and English tags
+deleteTag(["zh", "en"]);  // Delete all Chinese and English tags
 ```
 
 ## TypeScript Types
-
-This library provides complete TypeScript type definitions for type-safe development.
 
 ### Import Types
 
@@ -329,8 +308,8 @@ This library provides complete TypeScript type definitions for type-safe develop
 import type {
   BCP47LanguageTag,
   BCP47LanguageTagName,
-  BCP47LanguageTags
-} from 'bcp47-language-tags';
+  BCP47LanguageTags,
+} from "bcp47-language-tags";
 ```
 
 ### BCP47LanguageTag
@@ -339,151 +318,38 @@ The core type representing a single language tag and its localization informatio
 
 ```typescript
 type BCP47LanguageTag<T = string> = {
-  tag: T;           // BCP-47 language tag code (such as "zh-CN", "en-US")
+  code: T;          // BCP-47 language tag code (e.g., "zh-CN", "en-US")
   name: string;     // Localized language name, depends on the imported language module
-  nativeName: string; // Native name of the language (in the language's own writing form)
+  nativeName: string; // Native name of the language (in its own writing form)
+  flag?: string;    // Optional flag data (base64 encoded data URL)
 };
 ```
 
 ### BCP47LanguageTagName
 
-Union type of all supported language tag names, providing complete type coverage.
+Union type of all supported language tag names.
 
 ```typescript
 type BCP47LanguageTagName =
-  | "zh-CN"     // Simplified Chinese
-  | "zh-TW"     // Traditional Chinese (Taiwan)
-  | "zh-HK"     // Traditional Chinese (Hong Kong)
-  | "zh-MO"     // Traditional Chinese (Macau)
-  | "zh-SG"     // Simplified Chinese (Singapore)
-  | "zh-CHS"    // Simplified Chinese
-  | "zh-CHT"    // Traditional Chinese
-  | "en-US"     // English (United States)
-  | "en-GB"     // English (United Kingdom)
-  | "en-CA"     // English (Canada)
-  | "en-AU"     // English (Australia)
-  | "en-IN"     // English (India)
-  | "en-ZA"     // English (South Africa)
-  | "en-NZ"     // English (New Zealand)
-  | "en-IE"     // English (Ireland)
-  | "en-PH"     // English (Philippines)
-  | "en-ZW"     // English (Zimbabwe)
-  | "en-BZ"     // English (Belize)
-  | "en-CB"     // English (Caribbean)
-  | "en-JM"     // English (Jamaica)
-  | "en-TT"     // English (Trinidad and Tobago)
-  | "hi-IN"     // Hindi (India)
-  | "es-ES"     // Spanish (Spain)
-  | "es-MX"     // Spanish (Mexico)
-  | "es-AR"     // Spanish (Argentina)
-  | "es-CO"     // Spanish (Colombia)
-  | "es-PE"     // Spanish (Peru)
-  | "es-VE"     // Spanish (Venezuela)
-  | "es-CL"     // Spanish (Chile)
-  | "es-EC"     // Spanish (Ecuador)
-  | "es-GT"     // Spanish (Guatemala)
-  | "es-CU"     // Spanish (Cuba)
-  | "es-BO"     // Spanish (Bolivia)
-  | "es-DO"     // Spanish (Dominican Republic)
-  | "es-HN"     // Spanish (Honduras)
-  | "es-PY"     // Spanish (Paraguay)
-  | "es-SV"     // Spanish (El Salvador)
-  | "es-NI"     // Spanish (Nicaragua)
-  | "es-PR"     // Spanish (Puerto Rico)
-  | "es-UY"     // Spanish (Uruguay)
-  | "es-PA"     // Spanish (Panama)
-  | "es-CR"     // Spanish (Costa Rica)
-  | "ar-EG"     // Arabic (Egypt)
-  | "ar-SA"     // Arabic (Saudi Arabia)
-  | "ar-DZ"     // Arabic (Algeria)
-  | "ar-MA"     // Arabic (Morocco)
-  | "ar-IQ"     // Arabic (Iraq)
-  | "ar-SD"     // Arabic (Sudan)
-  | "ar-YE"     // Arabic (Yemen)
-  | "ar-SY"     // Arabic (Syria)
-  | "ar-TN"     // Arabic (Tunisia)
-  | "ar-LY"     // Arabic (Libya)
-  | "ar-JO"     // Arabic (Jordan)
-  | "ar-LB"     // Arabic (Lebanon)
-  | "ar-KW"     // Arabic (Kuwait)
-  | "ar-AE"     // Arabic (United Arab Emirates)
-  | "ar-BH"     // Arabic (Bahrain)
-  | "ar-QA"     // Arabic (Qatar)
-  | "ar-OM"     // Arabic (Oman)
-  | "pt-BR"     // Portuguese (Brazil)
-  | "pt-PT"     // Portuguese (Portugal)
-  | "ru-RU"     // Russian (Russia)
-  | "ru-UA"     // Russian (Ukraine)
-  | "ru-KZ"     // Russian (Kazakhstan)
-  | "ja-JP"     // Japanese (Japan)
-  | "de-DE"     // German (Germany)
-  | "de-AT"     // German (Austria)
-  | "de-CH"     // German (Switzerland)
-  | "fr-FR"     // French (France)
-  | "fr-CA"     // French (Canada)
-  | "fr-BE"     // French (Belgium)
-  | "fr-CH"     // French (Switzerland)
-  | "fr-LU"     // French (Luxembourg)
-  | "fr-MC"     // French (Monaco)
-  | "ko-KR"     // Korean (South Korea)
-  | "ko-KP"     // Korean (North Korea)
-  | "it-IT"     // Italian (Italy)
-  | "it-CH"     // Italian (Switzerland)
-  | "tr-TR"     // Turkish
-  | "th-TH"     // Thai
-  | "el-GR"     // Greek
-  | "cs-CZ"     // Czech
-  | "sv-SE"     // Swedish
-  | "sv-FI"     // Swedish (Finland)
-  | "hu-HU"     // Hungarian
-  | "fi-FI"     // Finnish
-  | "da-DK"     // Danish
-  | "nb-NO"     // Norwegian Bokmål
-  | "nn-NO"     // Norwegian Nynorsk
-  | "he-IL"     // Hebrew
-  | "id-ID"     // Indonesian
-  | "ms-MY"     // Malay (Malaysia)
-  | "ms-BN"     // Malay (Brunei)
-  | "ro-RO"     // Romanian
-  | "bg-BG"     // Bulgarian
-  | "uk-UA"     // Ukrainian
-  | "sk-SK"     // Slovak
-  | "sl-SI"     // Slovenian
-  | "hr-HR"     // Croatian
-  | "ca-ES"     // Catalan
-  | "lt-LT"     // Lithuanian
-  | "lv-LV"     // Latvian
-  | "et-EE"     // Estonian
-  | "sq-AL"     // Albanian
-  | "mk-MK"     // Macedonian
-  | "be-BY"     // Belarusian
-  | "is-IS"     // Icelandic
-  | "gl-ES"     // Galician
-  | "eu-ES"     // Basque
-  | "af-ZA"     // Afrikaans
-  | "sw-KE"     // Swahili
-  | "ta-IN"     // Tamil
-  | "te-IN"     // Telugu
-  | "kn-IN"     // Kannada
-  | "mr-IN"     // Marathi
-  | "gu-IN"     // Gujarati
-  | "pa-IN"     // Punjabi
-  | "kok-IN"    // Konkani
-  | "sa-IN"     // Sanskrit
-  | "ur-PK"     // Urdu
-  | "fa-IR"     // Persian
-  | "syr-SY"    // Syriac
-  | "div-MV"    // Divehi
-  | "ka-GE"     // Georgian
-  | "nl-NL"     // Dutch (Netherlands)
-  | "pl-PL"     // Polish
-  | "vi-VN"     // Vietnamese
-  | "bn-BD"     // Bengali (Bangladesh)
-  | "en-NG"     // English (Nigeria)
-  | "am-ET"     // Amharic (Ethiopia)
-  | "my-MM"     // Burmese
-  | "en-UG"     // English (Uganda)
-  | "fr-CD";    // French (Democratic Republic of the Congo)
+  | "zh-CN" | "zh-TW" | "zh-HK" | "zh-MO" | "zh-SG" | "zh-CHS" | "zh-CHT"
+  | "en-US" | "en-GB" | "en-CA" | "en-AU" | "en-IN" | "en-ZA" | "en-NZ"
+  | "en-IE" | "en-PH" | "en-ZW" | "en-BZ" | "en-CB" | "en-JM" | "en-TT"
+  | "hi-IN" | "es-ES" | "es-MX" | "es-AR" | "es-CO" | "es-PE" | "es-VE"
+  | "es-CL" | "es-EC" | "es-GT" | "es-CU" | "es-BO" | "es-DO" | "es-HN"
+  | "es-PY" | "es-SV" | "es-NI" | "es-PR" | "es-UY" | "es-PA" | "es-CR"
+  | "ar-EG" | "ar-SA" | "ar-DZ" | "ar-MA" | "ar-IQ" | "ar-SD" | "ar-YE"
+  | "ar-SY" | "ar-TN" | "ar-LY" | "ar-JO" | "ar-LB" | "ar-KW" | "ar-AE"
+  | "ar-BH" | "ar-QA" | "ar-OM" | "pt-BR" | "pt-PT" | "ru-RU" | "ru-UA"
+  | "ru-KZ" | "ja-JP" | "de-DE" | "de-AT" | "de-CH" | "fr-FR" | "fr-CA"
+  | "fr-BE" | "fr-CH" | "fr-LU" | "fr-MC" | "ko-KR" | "ko-KP" | "it-IT"
+  | "it-CH" | "tr-TR" | "th-TH" | "el-GR" | "cs-CZ" | "sv-SE" | "sv-FI"
+  | "hu-HU" | "fi-FI" | "da-DK" | "nb-NO" | "nn-NO" | "he-IL" | "id-ID"
+  | "ms-MY" | "ms-BN" | "ro-RO" | "bg-BG" | "uk-UA" | "sk-SK" | "sl-SI"
+  | "hr-HR" | "ca-ES" | "lt-LT" | "lv-LV" | "et-EE" | "sq-AL" | "mk-MK"
+  | "be-BY" | "is-IS" | "gl-ES" | "eu-ES" | "af-ZA" | "sw-KE" | "ta-IN"
+  | "te-IN" | "kn-IN" | "mr-IN" | "gu-IN" | "pa-IN" | "kok-IN" | "sa-IN"
+  | "ur-PK" | "fa-IR" | "syr-SY" | "div-MV" | "ka-GE" | "nl-NL" | "pl-PL"
+  | "vi-VN" | "bn-BD" | "en-NG" | "am-ET" | "my-MM" | "en-UG" | "fr-CD";
 ```
 
 ### BCP47LanguageTags
@@ -496,111 +362,41 @@ type BCP47LanguageTags = BCP47LanguageTag[];
 
 ### PrimaryLanguageTags
 
-Interface type for primary language tags, defining mapping relationships for the 11 most commonly used language tags. Used for type-safe language tag access and extension.
+Interface type for primary language tags, defining mapping relationships for the 11 most commonly used language tags.
 
 ```typescript
 interface PrimaryLanguageTags {
-  "zh-CN": BCP47LanguageTag;  // Simplified Chinese
-  "zh-TW": BCP47LanguageTag;  // Traditional Chinese
-  "en-US": BCP47LanguageTag;  // United States English
-  "ru-RU": BCP47LanguageTag;  // Russian
-  "es-ES": BCP47LanguageTag;  // Spanish
-  "fr-FR": BCP47LanguageTag;  // French
-  "de-DE": BCP47LanguageTag;  // German
-  "it-IT": BCP47LanguageTag;  // Italian
-  "ar-EG": BCP47LanguageTag;  // Arabic (Egypt)
-  "ja-JP": BCP47LanguageTag;  // Japanese
-  "ko-KR": BCP47LanguageTag;  // Korean
-}
-```
-
-**Usage Scenario:**
-
-```typescript
-// Extend TypeScript type declaration
-declare module "bcp47-language-tags" {
-  interface PrimaryLanguageTags {
-    "en-GB": BCP47LanguageTag;  // Extend support for English (United Kingdom)
-    "pt-BR": BCP47LanguageTag;  // Extend support for Portuguese (Brazil)
-  }
+  "zh-CN": BCP47LanguageTag;
+  "zh-TW": BCP47LanguageTag;
+  "en-US": BCP47LanguageTag;
+  "ru-RU": BCP47LanguageTag;
+  "es-ES": BCP47LanguageTag;
+  "fr-FR": BCP47LanguageTag;
+  "de-DE": BCP47LanguageTag;
+  "it-IT": BCP47LanguageTag;
+  "ar-EG": BCP47LanguageTag;
+  "ja-JP": BCP47LanguageTag;
+  "ko-KR": BCP47LanguageTag;
 }
 ```
 
 ### PrimaryLanguage
 
-Union type of primary languages, key types extracted from the `PrimaryLanguageTags` interface.
+Union type of primary languages.
 
 ```typescript
 type PrimaryLanguage = keyof PrimaryLanguageTags;
 // Equivalent to:
-// type PrimaryLanguage = "zh-CN" | "zh-TW" | "en-US" | "ru-RU" | "es-ES" | 
+// type PrimaryLanguage = "zh-CN" | "zh-TW" | "en-US" | "ru-RU" | "es-ES" |
 //                       "fr-FR" | "de-DE" | "it-IT" | "ar-EG" | "ja-JP" | "ko-KR";
-```
-
-**Usage Scenario:**
-
-```typescript
-// Function parameter restricted to primary languages
-function getPrimaryLanguageTag(tag: PrimaryLanguage): BCP47LanguageTag | undefined {
-  return tags.find(t => t.tag === tag);
-}
-
-// Usage example
-getPrimaryLanguageTag("zh-CN");  // ✅ Valid
-getPrimaryLanguageTag("en-GB");  // ❌ Compilation error: not a primary language
 ```
 
 ### PrimaryLanguageTagList
 
-Primary language tag array type, using `PrimaryLanguage` as a generic parameter.
+Primary language tag array type.
 
 ```typescript
 type PrimaryLanguageTagList = BCP47LanguageTag<PrimaryLanguage>[];
-```
-
-**Usage Scenario:**
-
-```typescript
-// Define primary language tag array
-const primaryLanguages: PrimaryLanguageTagList = [
-  { tag: 'zh-CN', name: 'Simplified Chinese', nativeName: '简体中文' },
-  { tag: 'en-US', name: 'English (United States)', nativeName: 'English (United States)' }
-];
-
-// Type-safe array operations
-function filterPrimaryLanguages(tags: PrimaryLanguageTagList): PrimaryLanguageTagList {
-  return tags.filter(tag => tag.tag !== 'ar-EG');
-}
-```
-
-### Type Hierarchy
-
-```typescript
-// Type hierarchy diagram
-BCP47LanguageTag<T>          // Base language tag type
-    ↓
-PrimaryLanguageTags          // Primary language tag interface (key-value mapping)
-    ↓ (keyof)
-PrimaryLanguage              // Primary language union type
-    ↓ (as generic parameter)
-PrimaryLanguageTagList       // Primary language tag array type
-```
-
-### Type Usage Example
-
-```typescript
-import type { BCP47LanguageTag } from 'bcp47-language-tags';
-
-// Function parameter type constraint
-function processLanguageTag(tag: BCP47LanguageTag) {
-  console.log(`${tag.nativeName} (${tag.name})`);
-}
-
-// Array type constraint
-const supportedLanguages: BCP47LanguageTag[] = [
-  { tag: 'zh-CN', name: 'Simplified Chinese', nativeName: '简体中文' },
-  { tag: 'en-US', name: 'English (United States)', nativeName: 'English (United States)' }
-];
 ```
 
 ## License
@@ -610,7 +406,7 @@ const supportedLanguages: BCP47LanguageTag[] = [
 ## Related Projects
 
 - [VoerkaI18n](https://zhangfisher.github.io/voerka-i18n/) - React/Vue/Nodejs/Solidjs internationalization solution
-- [AutoStore](https://zhangfisher.github.io/autostore/) - React state management library
+- [AutoStore](https://zhangfisher.github.io/autostore/) - Reactive state management library
 - [Logsets](https://zhangfisher.github.io/logsets/) - Terminal interface development enhancement library
 - [VoerkaLogger](https://zhangfisher.github.io/voerkalogger/) - Log output library
 - [FlexDecorators](https://zhangfisher.github.io/flex-decorators/) - Decorator development tool

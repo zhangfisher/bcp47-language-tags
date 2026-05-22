@@ -9,8 +9,8 @@ const __dirname = path.dirname(__filename);
 
 // 配置
 const CONFIG = {
-  distDir: path.join(__dirname, '..', 'dist', 'withFlags'),
-  flagsDir: path.join(__dirname, '..', 'src', 'flags', 'base64'),
+  distDir: path.join(__dirname, '..', 'dist', 'with-flags'),
+  flagsDir: path.join(__dirname, '..', 'src', 'flags', 'dataurl'),
   dryRun: false,
 };
 
@@ -51,14 +51,31 @@ function injectFlag(filePath, flagContent) {
   const svgStringLiteral = JSON.stringify(flagContent);
   let modifiedContent = content;
 
-  // 检查是否已存在 flag 字段
-  const flagMatch = content.match(/flag\s*:\s*"([^"]*)"/);
+  // 检查是否已存在 flag 字段 - 支持三种引号类型：双引号、单引号、模板字符串
+  const flagPatterns = [
+    /flag\s*:\s*"([^"]*)"/,    // 双引号 flag:""
+    /flag\s*:\s*'([^']*)'/,    // 单引号 flag:''
+    /flag\s*:\s*`([^`]*)`/,    // 模板字符串 flag:``
+  ];
+
+  let flagMatch = null;
+
+  for (const pattern of flagPatterns) {
+    flagMatch = content.match(pattern);
+    if (flagMatch) {
+      break;
+    }
+  }
 
   if (flagMatch) {
     // flag 字段已存在
     if (flagMatch[1] === '') {
-      // flag 为空字符串，替换为 SVG
-      modifiedContent = content.replace(/flag\s*:\s*""/, `flag:${svgStringLiteral}`);
+      // flag 为空字符串，根据匹配的引号类型进行替换
+      const quoteType = content.match(/flag\s*:\s*(["'`])/)[1];
+      modifiedContent = content.replace(
+        new RegExp(`flag\\s*:\\s*\\${quoteType}${quoteType === '`' ? '' : quoteType}${quoteType}`),
+        `flag:${svgStringLiteral}`
+      );
       stats.replacedCount++;
     } else {
       // flag 已有内容，跳过
@@ -69,7 +86,7 @@ function injectFlag(filePath, flagContent) {
     // flag 字段不存在，在 nativeName 后添加
     modifiedContent = content.replace(
       /("nativeName"\s*:\s*"[^"]+")([,}])/,
-      (match, p1, p2) => {
+      (_match, p1, p2) => {
         if (p2 === '}') {
           return `${p1},flag:${svgStringLiteral}}`;
         }
@@ -140,24 +157,34 @@ Examples:
   const langDirs = getLanguageDirs();
   console.log(`Found ${langDirs.length} language directories\n`);
 
-  // 遍历每个 flag 文件
-  for (const lng of flagFiles) {
-    const flagPath = path.join(CONFIG.flagsDir, `${lng}.data`);
-    const flagContent = fs.readFileSync(flagPath, 'utf-8').trim();
+  // 遍历每个语言目录
+  for (const baseLang of langDirs) {
+    const langDirPath = path.join(CONFIG.distDir, baseLang);
 
-    // 检查语言目录是否存在
-    const langDir = path.join(CONFIG.distDir, lng);
-    if (!fs.existsSync(langDir)) {
-      continue;
+    // 获取目录中的所有文件
+    const files = fs.readdirSync(langDirPath);
+
+    // 处理 .mjs 和 .cjs 文件
+    for (const file of files) {
+      if (!file.endsWith('.mjs') && !file.endsWith('.cjs')) {
+        continue;
+      }
+
+      // 从文件名提取语言标签（如 'zh-TW.mjs' -> 'zh-TW'）
+      const lng = file.replace(/\.(mjs|cjs)$/, '');
+
+      // 检查是否有对应的 flag 文件
+      const flagPath = path.join(CONFIG.flagsDir, `${lng}.data`);
+      if (!fs.existsSync(flagPath)) {
+        continue;
+      }
+
+      const flagContent = fs.readFileSync(flagPath, 'utf-8').trim();
+      const filePath = path.join(langDirPath, file);
+
+      // 注入 flag
+      injectFlag(filePath, flagContent);
     }
-
-    // 处理 .mjs 文件
-    const mjsPath = path.join(langDir, `${lng}.mjs`);
-    injectFlag(mjsPath, flagContent);
-
-    // 处理 .js 文件
-    const jsPath = path.join(langDir, `${lng}.js`);
-    injectFlag(jsPath, flagContent);
   }
 
   // 输出统计结果
